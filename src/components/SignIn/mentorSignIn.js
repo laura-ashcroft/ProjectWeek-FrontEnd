@@ -12,7 +12,7 @@ import signOut from "../../Images/SignOut.png";
 import errorImage from "../../Images/error.png";
 import soc from "../../Images/soc.png";
 
-function SignIn() {
+function MentorSignIn() {
   const [user, loading, error] = useAuthState(firebase.apps[0].auth());
   console.log(user);
   return (
@@ -49,4 +49,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default MentorSignIn;
