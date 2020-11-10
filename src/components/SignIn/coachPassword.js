@@ -34,7 +34,7 @@ function AskForPassword() {
             type="password"
             name="password"
             placeholder="Enter password here..."
-            onChange={getInputValue}
+            onKeyUp={getInputValue}
           ></input>
           <Button onClick={isCorrect()}>
             <Link to="/coaches">Submit</Link>
