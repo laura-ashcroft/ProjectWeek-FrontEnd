@@ -6,6 +6,8 @@ import soc from "../../Images/soc.png";
 //components
 import Button from "../button";
 import BootcamperSignIn from "../SignIn/bootcamperSignIn";
+import MentorSignIn from "../SignIn/mentorSignIn";
+import CoachSignIn from "../SignIn/coachPassword";
 
 function HomePage() {
   return (
