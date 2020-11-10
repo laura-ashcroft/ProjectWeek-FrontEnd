@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+body {
+  background-image: linear-gradient(#67a6f1, #f8cdda, #1d2b64);
+  background-size: auto;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h2 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#googleSignIn {
+  width: 300px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#spinnerGif {
+  width: 100px;
+}
+
+#signOut {
+  width: 100px;
+}
+
+#socLogo {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.signInDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

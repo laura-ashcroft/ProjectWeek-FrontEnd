@@ -1,19 +1,10 @@
 import "./App.css";
+import SignIn from "../SignIn/index";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Happy Project Week</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          React Docs R Here
-        </a>
-      </header>
+      <SignIn />
     </div>
   );
 }
