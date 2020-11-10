@@ -9,7 +9,7 @@ import Coaches from "../../Pages/CoachesMain";
 
 function App() {
   return (
-    <Coaches />
+    <HomePage />
     // <Router>
     //   <div className="App">
     //     <Button>

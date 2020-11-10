@@ -2,12 +2,14 @@
 import React from "react";
 
 //css
-import styles from "./ button.module.css";
+import styles from "./button.module.css";
 
-function Button({ text }) {
+function Button({ text, onClick }) {
   return (
-    <div className={styles.button}>
-      <button>{text}</button>
+    <div className={styles.buttonDiv}>
+      <button className={styles.button} onClick={onClick}>
+        {text}
+      </button>
     </div>
   );
 }

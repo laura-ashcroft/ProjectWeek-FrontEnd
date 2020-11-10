@@ -9,22 +9,25 @@ import BootcamperSignIn from "../../components/SignInBootcamper/index";
 import MentorSignIn from "../../components/SignInMentor/index";
 import CoachSignIn from "../../components/SignInCoach/index";
 
+//css
+import styles from "./homepage.module.css";
+
 function HomePage() {
   return (
     <Router>
-      <div className="homePage">
-        <nav className="homePageButtons">
-          <img id="socLogo" src={soc} alt="school of code logo" />
+      <div className={styles.homePage}>
+        <nav className={styles.homePageButtons}>
+          <img className={styles.socLogo} src={soc} alt="school of code logo" />
           <h2>Welcome To School of Code Mentoring</h2>
           <p>Please select your role at School of Code</p>
-          <Button>
-            <Link to="/SignInBootcamper">Bootcamper</Link>
+          <Button text={"Bootcamper"}>
+            <Link to="/SignInBootcamper">text={"Bootcamper"}</Link>
           </Button>
-          <Button>
-            <Link to="/SignInMentor">Mentor</Link>
+          <Button text={"Mentor"}>
+            <Link to="/SignInMentor">{"Mentor"}</Link>
           </Button>
-          <Button>
-            <Link to="/SignInCoach">Coach</Link>
+          <Button text={"Coach"}>
+            <Link to="/SignInCoach">{"Coach"}</Link>
           </Button>
           <a href="https://www.schoolofcode.co.uk">
             Find out more about School of Code
