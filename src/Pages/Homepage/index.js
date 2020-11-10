@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //images
 import soc from "../../Images/soc.png";
 //components
-import Button from "../button";
-import BootcamperSignIn from "../SignIn/bootcamperSignIn";
-import MentorSignIn from "../SignIn/mentorSignIn";
-import CoachSignIn from "../SignIn/coachPassword";
+import Button from "../../components/Button/index";
+import BootcamperSignIn from "../../components/SignInBootcamper/index";
+import MentorSignIn from "../../components/SignInMentor/index";
+import CoachSignIn from "../../components/SignInCoach/index";
 
 function HomePage() {
   return (

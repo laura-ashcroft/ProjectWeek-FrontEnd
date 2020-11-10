@@ -2,10 +2,10 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import HomePage from "../Pages/HomePage";
-import MentorSignIn from "../SignIn/mentorSignIn";
-import BootcamperSignIn from "../SignIn/bootcamperSignIn";
-import Coaches from "../Pages/Coaches";
+import HomePage from "../../Pages/Homepage";
+import MentorSignIn from "../SignInMentor/index";
+import BootcamperSignIn from "../SignInBootcamper/index";
+import Coaches from "../../Pages/CoachesMain";
 
 function App() {
   return (

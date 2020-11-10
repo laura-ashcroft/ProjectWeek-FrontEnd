@@ -1,7 +1,13 @@
+//functionality
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Button from "../button";
-import Coaches from "../Pages/Coaches";
+
+//components
+import Button from "../Button/index";
+import Coaches from "../../Pages/CoachesMain/index";
+
+//css
+import styles from "./signInCoach.module.css";
 
 function AskForPassword() {
   const [isTrue, setIsTrue] = useState(false);
@@ -27,10 +33,10 @@ function AskForPassword() {
   }
   return (
     <Router>
-      <div className="coachPassword">
-        <nav className="coachInput">
+      <div className={styles.coachPassword}>
+        <nav className={styles.coachInput}>
           <input
-            className="inputPassword"
+            className={styles.inputPassword}
             type="password"
             name="password"
             placeholder="Enter password here..."

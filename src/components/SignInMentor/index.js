@@ -1,9 +1,16 @@
+//functionality
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+
 //auth
 import firebase from "firebase/app";
-import { signInWithRedirect } from "../firebase";
-import { logout } from "../firebase";
+import { signInWithRedirect } from "../Firebase";
+import { logout } from "../Firebase";
+
+//components
+
+//css
+import styles from "./signInMentor.module.css";
 
 //images
 import signInGoogle from "../../Images/SignInGoogle.png";
