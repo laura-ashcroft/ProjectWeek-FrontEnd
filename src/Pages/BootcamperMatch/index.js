@@ -25,7 +25,7 @@ function BootcamperMatch() {
   function handleSubmit() {
     fetch("http://localhost:5000/bootcampers/1", {
       method: "PATCH",
-      body: { mentors_i_like: JSON.stringify(chosenArray) },
+      body: JSON.stringify({ mentors_i_like: chosenArray }),
       headers: {
         "content-type": "application/json",
         "Access-Control-Allow-Origin": "*",
