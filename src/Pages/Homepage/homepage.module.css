@@ -13,3 +13,7 @@ h2 {
   justify-content: space-around;
   align-items: center;
 }
+
+p {
+  color: darkslategrey;
+}
