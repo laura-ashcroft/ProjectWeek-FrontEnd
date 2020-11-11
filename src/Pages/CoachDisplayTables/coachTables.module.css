@@ -24,7 +24,6 @@ p {
   color: darkslategrey;
 }
 
-/* 
-#BootcamperTable {
-  padding: 20px;
-} */
+.BootcamperTable {
+  width: 100%;
+}
