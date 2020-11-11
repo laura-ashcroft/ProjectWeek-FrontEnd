@@ -4,6 +4,15 @@
   position: relative;
   margin-right: 95%;
 }
+th {
+  background-color: lightblue;
+  padding: 1vw;
+  border: solid black 1px;
+}
+td {
+  border: solid black 1px;
+  background-color: whitesmoke;
+}
 
 .tables {
   margin-left: 20px;
@@ -13,3 +22,8 @@
 p {
   color: darkslategrey;
 }
+
+/* 
+#BootcamperTable {
+  padding: 20px;
+} */
