@@ -8,13 +8,14 @@ import HomePage from "../../Pages/Homepage";
 import MentorSignIn from "../SignInMentor/index";
 //Bootcamper Pages
 import BootcamperSignIn from "../SignInBootcamper/index";
+import BootcamperHomepage from "../../Pages/BootcamperMain/index";
 //Coach Pages
 import Coaches from "../../Pages/CoachesMain";
 import CoachDisplayTables from "../../Pages/CoachDisplayTables";
 
 function App() {
   return (
-    <CoachDisplayTables />
+    <BootcamperHomepage />
     // <Router>
     //   <div className="App">
     //     <Button>

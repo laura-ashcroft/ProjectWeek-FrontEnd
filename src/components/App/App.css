@@ -10,3 +10,12 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
 }
+
+h2,
+h3 {
+  color: white;
+}
+
+p {
+  color: gray;
+}

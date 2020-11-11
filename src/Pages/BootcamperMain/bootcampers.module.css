@@ -1,0 +1,15 @@
+.socLogo {
+  width: 100px;
+  margin-top: 20px;
+  position: relative;
+  margin-right: 95%;
+}
+
+.bootcamperhome {
+  margin-left: 20px;
+  text-align: center;
+}
+
+p {
+  color: darkslategrey;
+}
