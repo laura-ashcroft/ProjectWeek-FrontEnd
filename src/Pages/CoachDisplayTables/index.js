@@ -38,9 +38,6 @@ function CoachDisplayTables() {
   }, []);
   console.log(mentorsTable);
 
-  /* function deconstructMentorTable(mentorTable){
-  let mentorData=mentorTable.map() */
-
   return (
     <div className={styles.tables}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
@@ -52,25 +49,25 @@ function CoachDisplayTables() {
       <table>
         <thead>
           <tr>
+            <th>ID Number </th>
             <th>Name</th>
             <th>Bio</th>
             <th>Interested Industry</th>
             <th>Interests</th>
             <th>Mentors I Like</th>
             <th>Email</th>
-            <th>ID Number </th>
           </tr>
         </thead>
         {bootcampersTable.map((bootcamper) => {
           return (
             <tr>
+              <td>{bootcamper.id}</td>
               <td>{bootcamper.name}</td>
               <td>{bootcamper.bio}</td>
               <td>{bootcamper.interested_industry}</td>
               <td>{bootcamper.interests}</td>
-              <td>{bootcamper.mentors_i_like}</td>
+              <td>{bootcamper.mentors_i_like.join(", ")}</td>
               <td>{bootcamper.email}</td>
-              <td>{bootcamper.id}</td>
             </tr>
           );
         })}
@@ -79,6 +76,7 @@ function CoachDisplayTables() {
       <table>
         <thead>
           <tr>
+            <th>ID Number</th>
             <th>Name</th>
             <th>Bio</th>
             <th>Coding Languages</th>
@@ -90,12 +88,12 @@ function CoachDisplayTables() {
             <th>Interests</th>
             <th>Previous Bootcamper</th>
             <th>Email</th>
-            <th>ID Number</th>
           </tr>
         </thead>
         {mentorsTable.map((mentor) => {
           return (
             <tr>
+              <td>{mentor.id}</td>
               <td>{mentor.name}</td>
               <td>{mentor.bio}</td>
               <td>{mentor.coding_languages}</td>
@@ -105,9 +103,8 @@ function CoachDisplayTables() {
               <td>{mentor.present_role}</td>
               <td>{mentor.role_description}</td>
               <td>{mentor.interests}</td>
-              <td>{mentor.previous_bootcamper}</td>
+              <td>{`${mentor.previous_bootcamper}`}</td>
               <td>{mentor.email}</td>
-              <td>{mentor.id}</td>
             </tr>
           );
         })}
