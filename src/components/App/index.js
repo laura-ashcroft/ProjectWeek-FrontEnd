@@ -18,26 +18,23 @@ import CoachDisplayTables from "../../Pages/CoachDisplayTables";
 
 function App() {
   return (
-    //<BootcamperMatch />
-    <>
-      <BootcamperMatch />
-      {/* <BootcamperHomepage />
-      <Router>
-        <div className="App">
-          <Button>
-            <Link to="/Coaches">Coach</Link>
-          </Button>
-          <nav className="navButtons">
-            <HomePage />
-          </nav>
-          <Switch>
-            <Route path="text">
-              <Textpage />
-            </Route>
-          </Switch>
-        </div>
-      </Router> */}
-    </>
+
+    // <Router>
+    //   <div className="App">
+    //     <Button>
+    //       <Link to="/Coaches">Coach</Link>
+    //     </Button>
+    //     <nav className="navButtons">
+    //       <HomePage />
+    //     </nav>
+    //     <Switch>
+    //       <Route path="text">
+    //         <Textpage />
+    //       </Route>
+    //     </Switch>
+    //   </div>
+    // </Router>
+
   );
 }
 
