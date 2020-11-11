@@ -22,6 +22,20 @@ function BootcamperMatch() {
       .then((data) => setMentors([...mentors, ...data.result]));
   }, []);
 
+  function handleSubmit() {
+    fetch("http://localhost:5000/bootcampers/1", {
+      method: "PATCH",
+      body: { mentors_i_like: JSON.stringify(chosenArray) },
+      headers: {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      mode: "cors",
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }
+
   return (
     <div className={styles.bootcampermatch}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
@@ -48,7 +62,7 @@ function BootcamperMatch() {
           );
         })}
       </div>
-      <Button text={"Submit"} />
+      <Button text={"Submit"} onClick={handleSubmit} />
     </div>
   );
 }
