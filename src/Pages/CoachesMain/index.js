@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styles from "./coaches.module.css";
 
 //Components
-import AskForPassword from "../../components/SignInCoach";
+import AskForPassword from "../../components/SignInCoach/index";
 
 //images
 import soc from "../../Images/soc.png";

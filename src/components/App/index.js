@@ -2,14 +2,19 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+//Homepages
 import HomePage from "../../Pages/Homepage";
+//Mentor Pages
 import MentorSignIn from "../SignInMentor/index";
+//Bootcamper Pages
 import BootcamperSignIn from "../SignInBootcamper/index";
+//Coach Pages
 import Coaches from "../../Pages/CoachesMain";
+import CoachDisplayTables from "../../Pages/CoachDisplayTables";
 
 function App() {
   return (
-    <HomePage />
+    <CoachDisplayTables />
     // <Router>
     //   <div className="App">
     //     <Button>

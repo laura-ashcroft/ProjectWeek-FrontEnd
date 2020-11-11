@@ -1,6 +1,7 @@
 //functionality
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 //components
 import Button from "../Button/index";
@@ -14,22 +15,16 @@ function AskForPassword() {
   const [value, setValue] = useState("");
 
   function checkCorrect() {
+    console.log("hell from check correct");
     if (value === "tits") {
-      return setIsTrue(true);
+      setIsTrue(true);
     }
-    //alert("GO AWAY");
-  }
-
-  function isCorrect() {
-    checkCorrect();
-    if (isTrue === true) {
-    }
-    return true;
   }
 
   function getInputValue(event) {
     setValue(event.target.value);
     console.log(event.target.value);
+    checkCorrect();
   }
   return (
     <Router>
@@ -41,9 +36,14 @@ function AskForPassword() {
             name="password"
             placeholder="Enter password here..."
             onKeyUp={getInputValue}
-          ></input>
-          <Button onClick={isCorrect()}>
-            <Link to="/coaches">Submit</Link>
+          />
+
+          <Button
+            onClick={() => {
+              checkCorrect();
+            }}
+          >
+            <Link to={isTrue ? "/coaches" : ""}>Submit</Link>
           </Button>
         </nav>
         <Switch>
