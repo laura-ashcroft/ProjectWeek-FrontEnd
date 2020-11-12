@@ -21,16 +21,32 @@ import CoachSignIn from "../../Pages/CoachesMain";
 function App() {
   return (
     <Router>
-      <CoachSignIn />
       <div className="App">
+        {
+          /* /* <CoachSignIn />
+      
         //having edited the button... it takes to new page! but displays below!
-        <nav className="navButtons">{/* <HomePage /> */}</nav>
-        <button>
-          <Link to="/Coaches">Coach</Link>
-        </button>
+        {/* <nav className="navButtons"><HomePage /> */
+          /* }</nav> */
+          /* <Button onClick> */
+          // <Button> Coach</Button> </Button> */}
+        }
         <Switch>
-          <Route path="/Coaches">
+          <Route path="/CoachesTable" component={Button}>
             <CoachesMain />
+          </Route>
+          <Route path="/SignInBootcamper">
+            <BootcamperSignIn />
+          </Route>
+          <Route path="/SignInMentor">
+            <MentorSignIn />
+          </Route>
+          <Route path="/SignInCoach">
+            <CoachSignIn />
+          </Route>
+          <Route path="/">
+            {" "}
+            <HomePage />
           </Route>
         </Switch>
       </div>

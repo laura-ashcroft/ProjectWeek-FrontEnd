@@ -12,20 +12,17 @@ import styles from "./signInCoach.module.css";
 
 function AskForPassword() {
   const [isTrue, setIsTrue] = useState(false);
-  const [value, setValue] = useState("");
 
-  function checkCorrect() {
+  function checkCorrect(event) {
+    let value = event.target.value;
+    console.log(event.target.value);
     console.log("hello from check correct");
-    if (value === "tits") {
+    if (value === "yes") {
+      console.log("this is the value", value);
       setIsTrue(true);
     }
   }
-
-  function getInputValue(event) {
-    setValue(event.target.value);
-    console.log(event.target.value);
-    checkCorrect();
-  }
+  console.log(isTrue);
   return (
     <div className={styles.coachPassword}>
       <nav className={styles.coachInput}>
@@ -34,17 +31,12 @@ function AskForPassword() {
           type="password"
           name="password"
           placeholder="Enter password here..."
-          onKeyUp={getInputValue}
+          onChange={checkCorrect}
         />
 
-        <Button
-          onClick={() => {
-            checkCorrect();
-            console.log("clicked");
-          }}
-        >
-          <Link to={isTrue ? "/coaches" : ""}>Submit</Link>
-        </Button>
+        <Link to={isTrue ? "/coachesTable" : "/error"}>
+          <Button text="Submit" />
+        </Link>
       </nav>
     </div>
   );
