@@ -94,9 +94,7 @@ function MentorForm({ state }) {
     fetch(`http://localhost:5000/mentors/${state.uid}`)
       .then((response) => response.json())
       .then((data) => {
-
         if (data.result !== undefined) {
-
           if (data.result.google_id === state.uid) {
             setDbMentorInfo(true);
             console.log(state.uid);
@@ -111,9 +109,7 @@ function MentorForm({ state }) {
   return (
     <>
       {!dbMentorInfo && (
-
         <form>
-
           <label>
             Name:
             <input
@@ -198,7 +194,7 @@ function MentorForm({ state }) {
             ></textarea>
           </label>
           <label>
-            Are You A Previous Bootcamper?
+            Are You A Previous Bootcamper? (true/false)
             <input
               type="text"
               name="previousBootcamper"
@@ -207,11 +203,9 @@ function MentorForm({ state }) {
           </label>
           <label></label>
           <Link to="/MyProfile">
-
             <button onClick={handleSubmit} type="submit">
               Submit Form
             </button>
-
           </Link>
         </form>
       )}

@@ -17,7 +17,7 @@ function AskForPassword() {
     let value = event.target.value;
     console.log(event.target.value);
     console.log("hello from check correct");
-    if (value === "yes") {
+    if (value === "titties") {
       console.log("this is the value", value);
       setIsTrue(true);
     }
