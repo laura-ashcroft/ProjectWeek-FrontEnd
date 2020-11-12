@@ -21,7 +21,7 @@ function BootcamperHomepage() {
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
       <h2>Bootcampers Homepage</h2>
       <h3>Welcome to the School of Code!</h3>
-      <Link to="/myProfile">
+      <Link to="/bootcamperProfile">
         <Button text={"My Profile"} />
       </Link>
       <Link to="/mentorMatching">

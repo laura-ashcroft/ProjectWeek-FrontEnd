@@ -73,7 +73,7 @@ function BootcamperMatch({ state }) {
       {patchSent && (
         <div className={styles.successDiv}>
           <p>Thank you! Your preferences have been saved!</p>
-          <Link to="/myProfile">
+          <Link to="/bootcamperProfile">
             <Button text={"View Profile"} onClick={onclick} />
           </Link>
         </div>
