@@ -68,7 +68,7 @@ function BootcamperForm({ state }) {
     console.log(dbBootcamperInfo);
   }, []);
 
-  //console.log(displayName, email, interestedIndustry, interests, bio);
+  //console.log(displayName, email, interestedIndustry, interests, bio);}
 
   return (
     <>
