@@ -10,7 +10,7 @@ import styles from "./mentors.module.css";
 //images
 import soc from "../../Images/soc.png";
 
-function MentorHomepage() {
+function MentorHomepage({ state }) {
   return (
     <div className={styles.mentorhome}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
@@ -22,7 +22,7 @@ function MentorHomepage() {
         cohort. Thank you for your submission!
       </p>
       <div>
-        <MentorForm />
+        <MentorForm state={state} />
       </div>
       <Button text={"Submit"} />
     </div>

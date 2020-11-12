@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //css
 import styles from "./mentorForm.module.css";
 
-function MentorForm(event) {
+
+function MentorForm({ state }) {
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [industry, setIndustry] = useState("");
@@ -78,7 +79,7 @@ function MentorForm(event) {
         interests: interests,
         previous_bootcamper: previousBootcamper,
         email: email,
-        google_id: "5655669sdfs75",
+        google_id: state.uid,
       }),
       headers: {
         "content-type": "application/json",
@@ -102,11 +103,21 @@ function MentorForm(event) {
       <form>
         <label>
           Name:
-          <input type="text" name="displayName" onChange={catchName}></input>
+          <input
+            type="text"
+            name="displayName"
+            onChange={catchName}
+            value={state.displayName}
+          ></input>
         </label>
         <label>
           Email:
-          <input type="email" name="email" onChange={catchEmail}></input>
+          <input
+            type="email"
+            name="email"
+            onChange={catchEmail}
+            value={state.email}
+          ></input>
         </label>
         <label>
           Industry:

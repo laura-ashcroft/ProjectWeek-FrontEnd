@@ -21,9 +21,10 @@ import signOut from "../../Images/SignOut.png";
 import errorImage from "../../Images/error.png";
 import soc from "../../Images/soc.png";
 
-function MentorSignIn() {
+function MentorSignIn({ setMentorGoogle }) {
   const [user, loading, error] = useAuthState(firebase.apps[0].auth());
   console.log(user);
+  setMentorGoogle(user);
   return (
     <div className={styles.signInDiv}>
       <img classname={styles.socLogo} src={soc} alt="school of code logo" />

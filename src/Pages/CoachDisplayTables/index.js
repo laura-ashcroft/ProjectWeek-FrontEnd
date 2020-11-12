@@ -78,7 +78,7 @@ function CoachDisplayTables() {
               <td>{bootcamper.bio}</td>
               <td>{bootcamper.interested_industry}</td>
               <td>{bootcamper.interests}</td>
-              <td>{bootcamper.mentors_i_like.join(", ")}</td>
+              <td>{bootcamper.mentors_i_like}</td>
               <td>{bootcamper.email}</td>
             </tr>
           );

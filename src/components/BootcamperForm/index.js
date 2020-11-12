@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //css
 import styles from "./bootcamperForm.module.css";
 
-function BootcamperForm() {
+function BootcamperForm({ state }) {
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [interestedIndustry, setInterestedIndustry] = useState("");
@@ -30,9 +30,11 @@ function BootcamperForm() {
   function catchBio(e) {
     setBio(e.target.value);
   }
+
   function onClick(onclick) {
     return onclick;
   }
+
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -45,7 +47,7 @@ function BootcamperForm() {
         interests: interests,
         mentors_I_Like: [``],
         email: email,
-        google_id: "565566975",
+        google_id: state.uid,
       }),
       headers: {
         "content-type": "application/json",
@@ -64,11 +66,21 @@ function BootcamperForm() {
       <form>
         <label>
           Name:
-          <input type="text" name="displayName" onChange={catchName}></input>
+          <input
+            type="text"
+            name="displayName"
+            onChange={catchName}
+            value={state.displayName}
+          ></input>
         </label>
         <label>
           Email:
-          <input type="email" name="email" onChange={catchEmail}></input>
+          <input
+            type="email"
+            name="email"
+            onChange={catchEmail}
+            value={state.email}
+          ></input>
         </label>
         <label>
           Interested Industry:

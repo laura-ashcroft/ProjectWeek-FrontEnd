@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Button from "../Button/index";
@@ -21,6 +21,8 @@ import CoachDisplayTables from "../../Pages/CoachDisplayTables";
 import CoachSignIn from "../../Pages/CoachesMain";
 
 function App() {
+  const [userGoogle, setUserGoogle] = useState("");
+  const [mentorGoogle, setMentorGoogle] = useState("");
   return (
     <Router>
       <div className="App">
@@ -32,10 +34,10 @@ function App() {
             <CoachDisplayTables />
           </Route>
           <Route path="/Bootcamper">
-            <BootcamperSignIn />
+            <BootcamperSignIn setUserGoogle={setUserGoogle} />
           </Route>
           <Route path="/Mentor">
-            <MentorSignIn />
+            <MentorSignIn setMentorGoogle={setMentorGoogle} />
           </Route>
           <Route path="/Coach">
             <CoachesMain />
@@ -44,16 +46,16 @@ function App() {
             <BootcamperMain />
           </Route>
           <Route path="/MentorsHome">
-            <MentorMain />
+            <MentorMain state={mentorGoogle} />
           </Route>
           <Route path="/MyProfile">
             <MentorProfile />
           </Route>
           <Route path="/myProfile">
-            <BootcampersProfile />
+            <BootcampersProfile state={userGoogle} />
           </Route>
           <Route path="/mentorMatching">
-            <BootcamperMatch />
+            <BootcamperMatch state={userGoogle} />
           </Route>
           <Route path="/">
             {" "}
