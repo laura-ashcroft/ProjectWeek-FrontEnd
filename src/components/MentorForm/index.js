@@ -1,11 +1,10 @@
 //functionality
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //components
 
 //css
 import styles from "./mentorForm.module.css";
-
 
 function MentorForm({ state }) {
   const [displayName, setDisplayName] = useState("");
@@ -19,6 +18,8 @@ function MentorForm({ state }) {
   const [specialityLanguage, setSpecialityLanguage] = useState("");
   const [previousBootcamper, setPreviousBootcamper] = useState("");
   const [codingLanguages, setCodingLanguages] = useState("");
+  const [dbMentorInfo, setDbMentorInfo] = useState(false);
+  console.log(state);
   console.log(bio);
   // event.preventDefault();
   function catchName(e) {
@@ -90,111 +91,132 @@ function MentorForm({ state }) {
       .then((response) => response.json())
       .then((data) => console.log(data));
   }
+
   function onlyShowOnce() {
     if (bio != undefined || bio != null) {
       return MentorForm;
     } else return console.log("I've vanished");
   }
+  useEffect(() => {
+    fetch(`http://localhost:5000/mentors/${state.uid}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result.uid === state.uid) {
+          setDbMentorInfo(true);
+          console.log(state.uid);
+        }
+      });
+    console.log(dbMentorInfo);
+  }, []);
 
   //console.log(displayName, email, interestedIndustry, interests, bio);
 
   return (
     <>
-      <form>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="displayName"
-            onChange={catchName}
-            value={state.displayName}
-          ></input>
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            onChange={catchEmail}
-            value={state.email}
-          ></input>
-        </label>
-        <label>
-          Industry:
-          <input
-            type="text"
-            name="interestedIndustry"
-            onChange={catchIndustry}
-          ></input>
-        </label>
-        <label>
-          Current Business:
-          <input
-            type="text"
-            name="currentBusiness"
-            onChange={catchCurrentBusiness}
-          ></input>
-        </label>
-        <label>
-          Current Role:
-          <input
-            type="text"
-            name="currentRole"
-            onChange={catchCurrentRole}
-          ></input>
-        </label>
-        <label>
-          Role Description:
-          <input
-            type="text"
-            name="roleDescription"
-            onChange={catchRoleDescription}
-          ></input>
-        </label>
-        <label>
-          Coding Languages:
-          <input
-            type="text"
-            name="codingLanguages"
-            onChange={catchCodingLanguages}
-          ></input>
+      {dbMentorInfo && (
+        <form>
           <label>
-            Speciality Language:
+            Name:
             <input
               type="text"
-              name="specialityLanguage"
-              onChange={catchSpecialityLanguage}
+              name="displayName"
+              onChange={catchName}
+              value={state.displayName}
             ></input>
           </label>
-        </label>
-        <label>
-          Interests:
-          <input type="text" name="interests" onChange={catchInterests}></input>
-        </label>
-        <label>
-          Bio:
-          <textarea
-            name="bio"
-            cols="30"
-            rows="10"
-            onChange={catchBio}
-          ></textarea>
-        </label>
-        <label>
-          Are You A Previous Bootcamper?
-          <input
-            type="text"
-            name="previousBootcamper"
-            onChange={catchPreviousBootcamper}
-          ></input>
-        </label>
-        <label></label>
-        <Link to="/MyProfile">
-          <button onClick={(handleSubmit, onclick, onlyShowOnce)} type="submit">
-            Submit Form
-          </button>
-        </Link>
-      </form>
+          <label>
+            Email:
+            <input
+              type="email"
+              name="email"
+              onChange={catchEmail}
+              value={state.email}
+            ></input>
+          </label>
+          <label>
+            Industry:
+            <input
+              type="text"
+              name="interestedIndustry"
+              onChange={catchIndustry}
+            ></input>
+          </label>
+          <label>
+            Current Business:
+            <input
+              type="text"
+              name="currentBusiness"
+              onChange={catchCurrentBusiness}
+            ></input>
+          </label>
+          <label>
+            Current Role:
+            <input
+              type="text"
+              name="currentRole"
+              onChange={catchCurrentRole}
+            ></input>
+          </label>
+          <label>
+            Role Description:
+            <input
+              type="text"
+              name="roleDescription"
+              onChange={catchRoleDescription}
+            ></input>
+          </label>
+          <label>
+            Coding Languages:
+            <input
+              type="text"
+              name="codingLanguages"
+              onChange={catchCodingLanguages}
+            ></input>
+            <label>
+              Speciality Language:
+              <input
+                type="text"
+                name="specialityLanguage"
+                onChange={catchSpecialityLanguage}
+              ></input>
+            </label>
+          </label>
+          <label>
+            Interests:
+            <input
+              type="text"
+              name="interests"
+              onChange={catchInterests}
+            ></input>
+          </label>
+          <label>
+            Bio:
+            <textarea
+              name="bio"
+              cols="30"
+              rows="10"
+              onChange={catchBio}
+            ></textarea>
+          </label>
+          <label>
+            Are You A Previous Bootcamper?
+            <input
+              type="text"
+              name="previousBootcamper"
+              onChange={catchPreviousBootcamper}
+            ></input>
+          </label>
+          <label></label>
+          <Link to="/MyProfile">
+            <button
+              onClick={(handleSubmit, onclick, onlyShowOnce)}
+              type="submit"
+            >
+              Submit Form
+            </button>
+          </Link>
+        </form>
+      )}
     </>
   );
 }

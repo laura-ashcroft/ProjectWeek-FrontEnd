@@ -58,7 +58,6 @@ function App() {
             <BootcamperMatch state={userGoogle} />
           </Route>
           <Route path="/">
-            {" "}
             <HomePage />
           </Route>
         </Switch>

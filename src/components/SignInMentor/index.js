@@ -54,7 +54,7 @@ function MentorSignIn({ setMentorGoogle }) {
           cohort. Thank you for your submission!
         </p>
       )}
-      {user && <MentorsForm />}
+      {user && <MentorsForm state={user} />}
 
       {loading && (
         <img
