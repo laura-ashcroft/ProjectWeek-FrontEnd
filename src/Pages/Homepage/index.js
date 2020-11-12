@@ -9,6 +9,11 @@ import BootcamperSignIn from "../../components/SignInBootcamper/index";
 import MentorSignIn from "../../components/SignInMentor/index";
 import CoachSignIn from "../../components/SignInCoach/index";
 
+//pages
+import MentorMain from "../MentorsMain/index";
+import BootcamperMain from "../BootcamperMain/index";
+import CoachesMain from "../CoachesMain/index";
+
 //css
 import styles from "./homepage.module.css";
 
@@ -20,16 +25,18 @@ function HomePage() {
         <h2>Welcome To School of Code Mentoring</h2>
         <p>Please select your role at School of Code</p>
 
-        <Link to="/SignInBootcamper">
-          {" "}
+        <Link to="/Bootcamper">
           <Button text={"Bootcamper"} />
         </Link>
-        <Button text={"Mentor"}>
-          <Link to="/SignInMentor">{"Mentor"}</Link>
-        </Button>
-        <Button text={"Coach"}>
-          <Link to="/SignInCoach">{"Coach"}</Link>
-        </Button>
+
+        <Link to="/Mentor">
+          <Button text={"Mentor"} />
+        </Link>
+
+        <Link to="/Coach">
+          <Button text={"Coach"} />
+        </Link>
+
         <a href="https://www.schoolofcode.co.uk">
           Find out more about School of Code
         </a>

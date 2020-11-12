@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //auth
 import firebase from "firebase/app";
 import { signInWithRedirect } from "../Firebase";
@@ -19,10 +20,12 @@ import soc from "../../Images/soc.png";
 function BootcamperSignIn() {
   const [user, loading, error] = useAuthState(firebase.apps[0].auth());
   console.log(user);
+
   return (
     <div className={styles.signInDiv}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
       <h2>Welcome To School of Code Mentoring</h2>
+      {!user && <p>Please sign in</p>}
       {!user && (
         <img
           className={styles.googleSignIn}
@@ -36,7 +39,17 @@ function BootcamperSignIn() {
       )}
       {user && <p>Welcome, {user.displayName}</p>}
       {user && (
-        <p>Please fill in the form below to complete your registration.</p>
+        <p>
+          Please complete the form below and make sure you submit your
+          information! This will take you to the mentor matching page once
+          completed.
+        </p>
+      )}
+      <form></form>
+      {user && (
+        <Link to="/BootcampersHome">
+          <Button text={"Submit"} />
+        </Link>
       )}
       {/*{user && <h2>Sign Out Of School of Code Mentoring</h2>}*/}
       {loading && (
