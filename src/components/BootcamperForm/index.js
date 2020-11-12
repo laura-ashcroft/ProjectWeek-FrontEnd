@@ -1,5 +1,5 @@
 //functionality
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BootcamperMatch from "../../Pages/BootcamperMatch";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -9,18 +9,18 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styles from "./bootcamperForm.module.css";
 
 function BootcamperForm({ state }) {
-  const [displayName, setDisplayName] = useState("");
+   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [interestedIndustry, setInterestedIndustry] = useState("");
   const [interests, setInterests] = useState("");
   const [bio, setBio] = useState("");
-
+  const [dbBootcamperInfo, setDbBootcamperInfo] = useState(false);
   function catchName(e) {
     setDisplayName(e.target.value);
   }
   function catchEmail(e) {
     setEmail(e.target.value);
-  }
+  } 
   function catchIndustry(e) {
     setInterestedIndustry(e.target.value);
   }
@@ -29,10 +29,6 @@ function BootcamperForm({ state }) {
   }
   function catchBio(e) {
     setBio(e.target.value);
-  }
-
-  function onClick(onclick) {
-    return onclick;
   }
 
   function handleSubmit(event) {
@@ -58,56 +54,76 @@ function BootcamperForm({ state }) {
       .then((data) => console.log(data));
   }
 
-  //console.log(displayName, email, interestedIndustry, interests, bio);
+  useEffect(() => {
+    fetch(`http://localhost:5000/bootcampers/${state.uid}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result !== undefined) {
+          if (data.result.google_id === state.uid) {
+            setDbBootcamperInfo(true);
+            console.log(state.uid);
+          }
+        }
+      });
+    console.log(dbBootcamperInfo);
+  }, []);
+
+  //console.log(displayName, email, interestedIndustry, interests, bio);}
 
   return (
     <>
-      <form>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="displayName"
-            onChange={catchName}
-            value={state.displayName}
-          ></input>
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            onChange={catchEmail}
-            value={state.email}
-          ></input>
-        </label>
-        <label>
-          Interested Industry:
-          <input
-            type="text"
-            name="interestedIndustry"
-            onChange={catchIndustry}
-          ></input>
-        </label>
-        <label>
-          Interests:
-          <input type="text" name="interests" onChange={catchInterests}></input>
-        </label>
-        <label>
-          Bio:
-          <textarea
-            name="bio"
-            cols="30"
-            rows="10"
-            onChange={catchBio}
-          ></textarea>
-        </label>
-        <Link to="/BootcampersHome">
-          <button onClick={handleSubmit} type="submit">
-            Submit Form
-          </button>
-        </Link>
-      </form>
+      {!dbBootcamperInfo && (
+        <form>
+          <label>
+            Name:
+            <input
+              type="text"
+              name="displayName"
+              onChange={catchName}
+              value={state.displayName}
+            ></input>
+          </label>
+          <label>
+            Email:
+            <input
+              type="email"
+              name="email"
+              onChange={catchEmail}
+              value={state.email}
+            ></input>
+          </label>
+          <label>
+            Interested Industry:
+            <input
+              type="text"
+              name="interestedIndustry"
+              onChange={catchIndustry}
+            ></input>
+          </label>
+          <label>
+            Interests:
+            <input
+              type="text"
+              name="interests"
+              onChange={catchInterests}
+            ></input>
+          </label>
+          <label>
+            Bio:
+            <textarea
+              name="bio"
+              cols="30"
+              rows="10"
+              onChange={catchBio}
+            ></textarea>
+          </label>
+          <Link to="/BootcampersHome">
+            <button onClick={handleSubmit} type="submit">
+              Submit Form
+            </button>
+          </Link>
+        </form>
+      )}
     </>
   );
 }

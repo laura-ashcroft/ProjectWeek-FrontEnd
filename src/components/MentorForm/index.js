@@ -22,12 +22,12 @@ function MentorForm({ state }) {
   console.log(state);
   console.log(bio);
   // event.preventDefault();
-  function catchName(e) {
+   function catchName(e) {
     setDisplayName(e.target.value);
   }
   function catchEmail(e) {
     setEmail(e.target.value);
-  }
+  } 
   function catchIndustry(e) {
     setIndustry(e.target.value);
   }
@@ -60,12 +60,9 @@ function MentorForm({ state }) {
   function catchPreviousBootcamper(e) {
     setPreviousBootcamper(e.target.value);
   }
-  function onClick(onclick) {
-    return onclick;
-  }
-
-  function handleSubmit() {
-    //event.preventDefault();
+  
+  function handleSubmit(event) {
+    event.preventDefault();
     fetch("http://localhost:5000/mentors", {
       method: "POST",
       body: JSON.stringify({
