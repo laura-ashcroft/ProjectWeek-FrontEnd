@@ -12,7 +12,7 @@ import styles from "./match.module.css";
 //images
 import soc from "../../Images/soc.png";
 
-function BootcamperMatch() {
+function BootcamperMatch({ state }) {
   const [mentors, setMentors] = useState([]);
   const [chosenArray, setChosenArray] = useState([]);
   const [patchSent, setPatchSent] = useState(false);
@@ -23,9 +23,9 @@ function BootcamperMatch() {
       .then((response) => response.json())
       .then((data) => setMentors([...mentors, ...data.result]));
   }, []);
-
+  console.log(state.uid);
   function handleSubmit() {
-    fetch("http://localhost:5000/bootcampers/1", {
+    fetch(`http://localhost:5000/bootcampers/${state.uid}`, {
       method: "PATCH",
       body: JSON.stringify({ mentors_i_like: chosenArray }),
       headers: {

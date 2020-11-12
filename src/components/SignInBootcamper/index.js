@@ -18,10 +18,10 @@ import loadingSpinner from "../../Images/Loading.gif";
 import errorImage from "../../Images/error.png";
 import soc from "../../Images/soc.png";
 
-function BootcamperSignIn() {
+function BootcamperSignIn({ setUserGoogle }) {
   const [user, loading, error] = useAuthState(firebase.apps[0].auth());
   console.log(user);
-
+  setUserGoogle(user);
   return (
     <div className={styles.signInDiv}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
@@ -50,7 +50,7 @@ function BootcamperSignIn() {
           completed.
         </p>
       )}
-      {user && <BootcampersForm />}
+      {user && <BootcampersForm state={user} />}
       {user && (
         <Link to="/BootcampersHome">
           <Button text={"Submit"} />
