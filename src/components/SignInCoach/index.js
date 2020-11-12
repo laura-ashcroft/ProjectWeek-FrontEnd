@@ -12,47 +12,33 @@ import styles from "./signInCoach.module.css";
 
 function AskForPassword() {
   const [isTrue, setIsTrue] = useState(false);
-  const [value, setValue] = useState("");
 
-  function checkCorrect() {
-    console.log("hell from check correct");
-    if (value === "tits") {
+  function checkCorrect(event) {
+    let value = event.target.value;
+    console.log(event.target.value);
+    console.log("hello from check correct");
+    if (value === "yes") {
+      console.log("this is the value", value);
       setIsTrue(true);
     }
   }
-
-  function getInputValue(event) {
-    setValue(event.target.value);
-    console.log(event.target.value);
-    checkCorrect();
-  }
+  console.log(isTrue);
   return (
-    <Router>
-      <div className={styles.coachPassword}>
-        <nav className={styles.coachInput}>
-          <input
-            className={styles.inputPassword}
-            type="password"
-            name="password"
-            placeholder="Enter password here..."
-            onKeyUp={getInputValue}
-          />
+    <div className={styles.coachPassword}>
+      <nav className={styles.coachInput}>
+        <input
+          className={styles.inputPassword}
+          type="password"
+          name="password"
+          placeholder="Enter password here..."
+          onChange={checkCorrect}
+        />
 
-          <Button
-            onClick={() => {
-              checkCorrect();
-            }}
-          >
-            <Link to={isTrue ? "/coaches" : ""}>Submit</Link>
-          </Button>
-        </nav>
-        <Switch>
-          <Route path="/coaches">
-            <Coaches />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+        <Link to={isTrue ? "/coachesTable" : "/error"}>
+          <Button text="Submit" />
+        </Link>
+      </nav>
+    </div>
   );
 }
 

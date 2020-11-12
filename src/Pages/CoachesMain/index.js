@@ -15,17 +15,14 @@ function CoachSignIn() {
   console.log("hello from coaches");
 
   return (
-    <Router>
-      <div className={styles.coachSignIn}>
-        <nav className={styles.coachInput}>
-          <img className={styles.socLogo} src={soc} alt="school of code logo" />
-          <h2>Welcome, Coach!</h2>
-          <p>Please enter the coach password below:</p>
-          <AskForPassword />
-        </nav>
-        <Switch></Switch>
-      </div>
-    </Router>
+    <div className={styles.coachSignIn}>
+      <nav className={styles.coachInput}>
+        <img className={styles.socLogo} src={soc} alt="school of code logo" />
+        <h2>Welcome, Coach!</h2>
+        <p>Please enter the coach password below:</p>
+        <AskForPassword />
+      </nav>
+    </div>
   );
 }
 

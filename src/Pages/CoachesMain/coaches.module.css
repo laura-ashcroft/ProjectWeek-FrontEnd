@@ -1,11 +1,3 @@
-body {
-  background-image: linear-gradient(#67a6f1, #f8cdda, #1d2b64);
-  background-size: auto;
-  background-repeat: no-repeat;
-  height: 100vh;
-  align-items: center;
-}
-
 h2 {
   color: white;
 }
