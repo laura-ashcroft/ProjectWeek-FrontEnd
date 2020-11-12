@@ -22,8 +22,21 @@ import CoachSignIn from "../../Pages/CoachesMain";
 
 function App() {
   return (
+    <BootcamperHomepage />
     <Router>
+
+      {/* <CoachSignIn /> */}
+      <BootcamperMatch />
       <div className="App">
+        {/* //having edited the button... it takes to new page! but displays below! */}
+        <nav className="navButtons">{/* <HomePage /> */}</nav>
+        <button>
+          <Link to="/Coaches">Coach</Link>
+        </button>
+
+      <div className="App">
+
+
         <Switch>
           <Route path="/CoachesTable">
             <CoachDisplayTables />
@@ -56,6 +69,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+
   );
 }
 

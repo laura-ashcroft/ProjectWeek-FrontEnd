@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //components
 import Button from "../../components/Button/index";
+import BootcamperForm from "../../components/BootcamperForm/index";
 
 //css
 import styles from "./bootcampers.module.css";
@@ -26,6 +27,7 @@ function BootcamperHomepage() {
       <Link to="/mentorMatching">
         <Button text={"View mentors"} />
       </Link>
+
     </div>
   );
 }
