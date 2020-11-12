@@ -37,7 +37,7 @@ function HomePage() {
           <Button text={"Coach"} />
         </Link>
 
-        <a href="https://www.schoolofcode.co.uk">
+        <a href="https://www.schoolofcode.co.uk" target="blank">
           Find out more about School of Code
         </a>
       </nav>
