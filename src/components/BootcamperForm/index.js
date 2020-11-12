@@ -8,14 +8,6 @@ import BootcamperMatch from "../../Pages/BootcamperMatch";
 import styles from "./bootcamperForm.module.css";
 
 function BootcamperForm() {
-  //   const [formData, setFormData] = useState({
-  //     displayName: "",
-  //     email: "",
-  //     interestedIndustry: "",
-  //     interests: "",
-  //     bio: "",
-  //   });
-
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [interestedIndustry, setInterestedIndustry] = useState("");
@@ -38,35 +30,34 @@ function BootcamperForm() {
     setBio(e.target.value);
   }
 
-    async function handleSubmit() {
-        const response = await fetch(`http://localhost:5000/bootcampers`, {
-          headers: { "Contetn-Type": "application/json" },
-        });
-        const data = await response.json();
-        setMentorsTable(data.result);
-      }
-      getMentor();
-    }
+  function handleSubmit(event) {
+    event.preventDefault();
+    fetch("http://localhost:5000/bootcampers", {
+      method: "POST",
+      body: JSON.stringify({
+        name: displayName,
+        bio: bio,
+        interested_industry: interestedIndustry,
+        interests: interests,
+        mentors_I_Like: [``],
+        email: email,
+        google_id: "565566975",
+      }),
+      headers: {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      mode: "cors",
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }
 
+  //console.log(displayName, email, interestedIndustry, interests, bio);
 
-  //   function handleSubmit(e) {
-  //     setFormData({
-  //       displayName: `${e.target.displayName.value}`,
-  //       email: e.target.email.value,
-  //       interestedIndustry: e.target.interestedIndustry.value,
-  //       interests: e.target.interests.value,
-  //       bio: e.target.bio.value,
-  //     });
-  //   }
-  //   console.log(formData);
-  //   console.log(displayName, email, interestedIndustry, interests, bio);
   return (
     <>
-      <form
-      // onSubmit={() => {
-      //   handleSubmit();
-      // }}
-      >
+      <form>
         <label>
           Name:
           <input type="text" name="displayName" onChange={catchName}></input>
@@ -96,7 +87,9 @@ function BootcamperForm() {
             onChange={catchBio}
           ></textarea>
         </label>
-        <button type="submit">Submit Form</button>
+        <button onClick={handleSubmit} type="submit">
+          Submit Form
+        </button>
       </form>
     </>
   );
