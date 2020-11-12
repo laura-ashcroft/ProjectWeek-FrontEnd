@@ -34,7 +34,7 @@ function CoachDisplayTables() {
   useEffect(() => {
     async function getMentor() {
       const response = await fetch(`http://localhost:5000/mentors`, {
-        headers: { "Contetn-Type": "application/json" },
+        headers: { "Content-Type": "application/json" },
       });
       const data = await response.json();
       //result - an array of objects
