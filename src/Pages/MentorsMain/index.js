@@ -3,7 +3,7 @@ import React from "react";
 
 //components
 import Button from "../../components/Button/index";
-
+import MentorForm from "../../components/MentorForm/index";
 //css
 import styles from "./mentors.module.css";
 
@@ -21,7 +21,9 @@ function MentorHomepage() {
         information! This will put you in the pool of mentors for the current
         cohort. Thank you for your submission!
       </p>
-      <form></form>
+      <div>
+        <MentorForm />
+      </div>
       <Button text={"Submit"} />
     </div>
   );
