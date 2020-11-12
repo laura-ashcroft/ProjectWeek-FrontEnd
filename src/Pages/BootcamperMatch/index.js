@@ -14,6 +14,7 @@ import soc from "../../Images/soc.png";
 function BootcamperMatch() {
   const [mentors, setMentors] = useState([]);
   const [chosenArray, setChosenArray] = useState([]);
+  const [patchSent, setPatchSent] = useState(false);
 
   useEffect(() => {
     setMentors([]);
@@ -34,6 +35,7 @@ function BootcamperMatch() {
     })
       .then((response) => response.json())
       .then((data) => console.log(data));
+    setPatchSent(!patchSent);
   }
 
   return (
@@ -50,19 +52,27 @@ function BootcamperMatch() {
         due to the size of the cohort this may not always be possible. Please
         check for updates on mentor pairing prior to the course start date.
       </p>
-      <div className={styles.cardArea}>
-        {mentors.map((mentor) => {
-          return (
-            <MentorDisplayCards
-              key={mentor.google_id}
-              mentor={mentor}
-              chosenFn={setChosenArray}
-              chosenArray={chosenArray}
-            />
-          );
-        })}
-      </div>
-      <Button text={"Submit"} onClick={handleSubmit} />
+      {!patchSent && (
+        <div className={styles.cardArea}>
+          {mentors.map((mentor) => {
+            return (
+              <MentorDisplayCards
+                key={mentor.google_id}
+                mentor={mentor}
+                chosenFn={setChosenArray}
+                chosenArray={chosenArray}
+              />
+            );
+          })}
+        </div>
+      )}
+      {!patchSent && <Button text={"Submit"} onClick={handleSubmit} />}
+
+      {patchSent && (
+        <div className={styles.successDiv}>
+          <p>Thank you! Your preferences have been saved!</p>
+        </div>
+      )}
     </div>
   );
 }

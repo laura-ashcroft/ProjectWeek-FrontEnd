@@ -21,9 +21,10 @@ import CoachSignIn from "../../Pages/CoachesMain";
 function App() {
   return (
     <Router>
-      <CoachSignIn />
+      {/* <CoachSignIn /> */}
+      <BootcamperMatch />
       <div className="App">
-        //having edited the button... it takes to new page! but displays below!
+        {/* //having edited the button... it takes to new page! but displays below! */}
         <nav className="navButtons">{/* <HomePage /> */}</nav>
         <button>
           <Link to="/Coaches">Coach</Link>
@@ -35,10 +36,10 @@ function App() {
         </Switch>
       </div>
     </Router>
-    
-   // <BootcamperSignIn />
-    <CoachDisplayTables />
-   // <BootcamperMatch />
+
+    // <BootcamperSignIn />
+    //<CoachDisplayTables />
+    // <BootcamperMatch />
     // <Router>
     //   <div className="App">
     //     <Button>
@@ -54,7 +55,6 @@ function App() {
     //     </Switch>
     //   </div>
     // </Router>
-
   );
 }
 
