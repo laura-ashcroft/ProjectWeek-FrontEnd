@@ -10,6 +10,7 @@ import { logout } from "../Firebase";
 
 //components
 import Button from "../../components/Button/index";
+import MentorsForm from "../../components/MentorForm/index";
 //css
 import styles from "./signInMentor.module.css";
 
@@ -39,10 +40,11 @@ function MentorSignIn() {
       {user && (
         <Button className={styles.signOut} onClick={logout} text={"Log Out"} />
       )}
-      <Link to="/">
-        <Button text="back" />
-      </Link>
-
+      {!user && (
+        <Link to="/">
+          <Button text="back" />
+        </Link>
+      )}
       {user && <p>Welcome, {user.displayName}</p>}
       {user && (
         <p>
@@ -51,13 +53,8 @@ function MentorSignIn() {
           cohort. Thank you for your submission!
         </p>
       )}
-      <form></form>
-      {user && (
-        <Link to="/MentorsHome">
-          <Button text={"Submit"} />
-        </Link>
-      )}
-      {/*{user && <h2>Sign Out Of School of Code Mentoring</h2>}*/}
+      {user && <MentorsForm />}
+
       {loading && (
         <img
           className={styles.spinnerGif}
