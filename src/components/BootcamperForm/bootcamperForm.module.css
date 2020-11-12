@@ -1,0 +1,10 @@
+form {
+  color: white;
+  font-weight: bold;
+  background-color: gray;
+}
+
+input {
+  margin: 5px;
+  opacity: 100%;
+}
