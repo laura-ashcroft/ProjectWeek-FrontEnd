@@ -4,16 +4,28 @@
   position: relative;
   margin-right: 95%;
 }
+th {
+  background-color: lightblue;
+  padding: 1vw;
+  border: solid black 1px;
+}
+td {
+  border: solid black 1px;
+  background-color: whitesmoke;
+}
 
 .tables {
   margin-left: 20px;
   text-align: center;
+  width: 100vw;
   margin-right: 20px;
+
 }
 
 p {
   color: darkslategrey;
 }
+
 
 table {
   border: 1px solid #1C6EA4;
@@ -45,6 +57,7 @@ table th {
   color: #FFFFFF;
   border-left: 2px solid #D0E4F5;
 }
+
 
 
 

@@ -15,7 +15,7 @@ function AskForPassword() {
   const [value, setValue] = useState("");
 
   function checkCorrect() {
-    console.log("hell from check correct");
+    console.log("hello from check correct");
     if (value === "tits") {
       setIsTrue(true);
     }
@@ -27,32 +27,26 @@ function AskForPassword() {
     checkCorrect();
   }
   return (
-    <Router>
-      <div className={styles.coachPassword}>
-        <nav className={styles.coachInput}>
-          <input
-            className={styles.inputPassword}
-            type="password"
-            name="password"
-            placeholder="Enter password here..."
-            onKeyUp={getInputValue}
-          />
+    <div className={styles.coachPassword}>
+      <nav className={styles.coachInput}>
+        <input
+          className={styles.inputPassword}
+          type="password"
+          name="password"
+          placeholder="Enter password here..."
+          onKeyUp={getInputValue}
+        />
 
-          <Button
-            onClick={() => {
-              checkCorrect();
-            }}
-          >
-            <Link to={isTrue ? "/coaches" : ""}>Submit</Link>
-          </Button>
-        </nav>
-        <Switch>
-          <Route path="/coaches">
-            <Coaches />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+        <Button
+          onClick={() => {
+            checkCorrect();
+            console.log("clicked");
+          }}
+        >
+          <Link to={isTrue ? "/coaches" : ""}>Submit</Link>
+        </Button>
+      </nav>
+    </div>
   );
 }
 
