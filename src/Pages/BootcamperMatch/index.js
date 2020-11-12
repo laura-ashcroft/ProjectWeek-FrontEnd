@@ -49,26 +49,10 @@ function BootcamperMatch({ state }) {
         you have selected your mentors, click submit at the bottom of the page.
       </p>
       <p>
-        Disclaimer: We will try to pair you with your preferred mentor however
-        due to the size of the cohort this may not always be possible. Please
-        check for updates on mentor pairing prior to the course start date.
+        We will try to pair you with your preferred mentor however due to the
+        size of the cohort this may not always be possible. Please check for
+        updates on mentor pairing prior to the course start date.
       </p>
-
-      <div className={styles.cardArea}>
-        {mentors.map((mentor) => {
-          return (
-            <MentorDisplayCards
-              key={mentor.google_id}
-              mentor={mentor}
-              chosenFn={setChosenArray}
-              chosenArray={chosenArray}
-            />
-          );
-        })}
-      </div>
-      <Link to="/myProfile">
-        <Button text={"Submit"} onClick={handleSubmit} />
-      </Link>
 
       {!patchSent && (
         <div className={styles.cardArea}>
@@ -89,6 +73,9 @@ function BootcamperMatch({ state }) {
       {patchSent && (
         <div className={styles.successDiv}>
           <p>Thank you! Your preferences have been saved!</p>
+          <Link to="/myProfile">
+            <Button text={"View Profile"} onClick={onclick} />
+          </Link>
         </div>
       )}
     </div>

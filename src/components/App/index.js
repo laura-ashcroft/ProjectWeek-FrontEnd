@@ -48,6 +48,9 @@ function App() {
           <Route path="/MentorsHome">
             <MentorMain state={mentorGoogle} />
           </Route>
+          <Route path="/MyProfile">
+            <MentorProfile />
+          </Route>
           <Route path="/myProfile">
             <BootcampersProfile state={userGoogle} />
           </Route>

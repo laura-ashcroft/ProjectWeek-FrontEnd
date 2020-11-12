@@ -25,7 +25,7 @@ function BootcamperSignIn({ setUserGoogle }) {
   return (
     <div className={styles.signInDiv}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
-      <h2>Welcome To School of Code Mentoring</h2>
+      <h2>Welcome To School of Code Mentoring, Bootcamper</h2>
       {!user && (
         <img
           className={styles.googleSignIn}
@@ -50,12 +50,14 @@ function BootcamperSignIn({ setUserGoogle }) {
           completed.
         </p>
       )}
+
       {user && <BootcampersForm state={user} />}
       {user && (
         <Link to="/BootcampersHome">
           <Button text={"Submit"} />
         </Link>
       )}
+
       {/*{user && <h2>Sign Out Of School of Code Mentoring</h2>}*/}
       {loading && (
         <img

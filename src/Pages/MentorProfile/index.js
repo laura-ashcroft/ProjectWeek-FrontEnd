@@ -1,5 +1,6 @@
 //functionality
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //components
 import Button from "../../components/Button/index";
@@ -23,6 +24,9 @@ function MentorProfile() {
         If there are any issues with your profile information, please contact
         the School of Code on bootcamp@schoolofcode.co.uk
       </p>
+      <Link to="/Mentor">
+        <Button text="back" />
+      </Link>
     </div>
   );
 }
