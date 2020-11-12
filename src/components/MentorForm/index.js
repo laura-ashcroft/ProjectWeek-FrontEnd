@@ -20,7 +20,7 @@ function MentorForm({ state }) {
   const [previousBootcamper, setPreviousBootcamper] = useState("");
   const [codingLanguages, setCodingLanguages] = useState("");
   console.log(bio);
-  event.preventDefault();
+  // event.preventDefault();
   function catchName(e) {
     setDisplayName(e.target.value);
   }
