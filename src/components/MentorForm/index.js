@@ -101,9 +101,11 @@ function MentorForm({ state }) {
     fetch(`http://localhost:5000/mentors/${state.uid}`)
       .then((response) => response.json())
       .then((data) => {
-        if (data.result.uid === state.uid) {
-          setDbMentorInfo(true);
-          console.log(state.uid);
+        if (data.result) {
+          if (data.result.google_id === state.uid) {
+            setDbMentorInfo(true);
+            console.log(state.uid);
+          }
         }
       });
     console.log(dbMentorInfo);
@@ -113,8 +115,8 @@ function MentorForm({ state }) {
 
   return (
     <>
-      {dbMentorInfo && (
-        <form>
+      {!dbMentorInfo && (
+        <form onSubmit={handleSubmit}>
           <label>
             Name:
             <input
@@ -208,12 +210,7 @@ function MentorForm({ state }) {
           </label>
           <label></label>
           <Link to="/MyProfile">
-            <button
-              onClick={(handleSubmit, onclick, onlyShowOnce)}
-              type="submit"
-            >
-              Submit Form
-            </button>
+            <button type="submit">Submit Form</button>
           </Link>
         </form>
       )}

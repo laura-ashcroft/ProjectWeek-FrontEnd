@@ -35,18 +35,17 @@ function BootcamperForm({ state }) {
     return onclick;
   }
 
-
   function handleSubmit(event) {
     event.preventDefault();
     fetch("http://localhost:5000/bootcampers", {
       method: "POST",
       body: JSON.stringify({
-        name: displayName,
+        name: state.displayName,
         bio: bio,
         interested_industry: interestedIndustry,
         interests: interests,
         mentors_I_Like: [``],
-        email: email,
+        email: state.email,
         google_id: state.uid,
       }),
       headers: {
@@ -104,7 +103,7 @@ function BootcamperForm({ state }) {
           ></textarea>
         </label>
         <Link to="/BootcampersHome">
-          <button onClick={(handleSubmit, onClick)} type="submit">
+          <button onClick={handleSubmit} type="submit">
             Submit Form
           </button>
         </Link>
