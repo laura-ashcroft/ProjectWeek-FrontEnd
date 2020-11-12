@@ -22,6 +22,16 @@ function App() {
   return (
     <BootcamperHomepage />
     <Router>
+
+      {/* <CoachSignIn /> */}
+      <BootcamperMatch />
+      <div className="App">
+        {/* //having edited the button... it takes to new page! but displays below! */}
+        <nav className="navButtons">{/* <HomePage /> */}</nav>
+        <button>
+          <Link to="/Coaches">Coach</Link>
+        </button>
+
       <div className="App">
         {
           /* /* <CoachSignIn />
@@ -32,6 +42,7 @@ function App() {
           /* <Button onClick> */
           // <Button> Coach</Button> </Button> */}
         }
+
         <Switch>
           <Route path="/CoachesTable" component={Button}>
             <CoachesMain />
@@ -54,7 +65,9 @@ function App() {
     </Router>
 
     // <BootcamperSignIn />
-    // <CoachDisplayTables />
+
+    //<CoachDisplayTables />
+
     // <BootcamperMatch />
     // <Router>
     //   <div className="App">
