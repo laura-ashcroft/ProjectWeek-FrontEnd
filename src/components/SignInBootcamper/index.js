@@ -25,7 +25,6 @@ function BootcamperSignIn() {
     <div className={styles.signInDiv}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
       <h2>Welcome To School of Code Mentoring</h2>
-      {!user && <p>Please sign in</p>}
       {!user && (
         <img
           className={styles.googleSignIn}
@@ -36,6 +35,11 @@ function BootcamperSignIn() {
       )}
       {user && (
         <Button className={styles.signOut} onClick={logout} text={"Log Out"} />
+      )}
+      {!user && (
+        <Link to="/">
+          <Button text="back" />
+        </Link>
       )}
       {user && <p>Welcome, {user.displayName}</p>}
       {user && (

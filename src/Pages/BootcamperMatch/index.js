@@ -1,5 +1,6 @@
 //functionality
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //components
 import Button from "../../components/Button/index";
@@ -62,7 +63,9 @@ function BootcamperMatch() {
           );
         })}
       </div>
-      <Button text={"Submit"} onClick={handleSubmit} />
+      <Link to="/myProfile">
+        <Button text={"Submit"} onClick={handleSubmit} />
+      </Link>
     </div>
   );
 }

@@ -32,13 +32,16 @@ function App() {
             <BootcamperSignIn />
           </Route>
           <Route path="/Mentor">
-            <MentorMain />
+            <MentorSignIn />
           </Route>
           <Route path="/Coach">
             <CoachesMain />
           </Route>
           <Route path="/BootcampersHome">
             <BootcamperMain />
+          </Route>
+          <Route path="/MentorsHome">
+            <MentorMain />
           </Route>
           <Route path="/myProfile">
             <BootcampersProfile />
