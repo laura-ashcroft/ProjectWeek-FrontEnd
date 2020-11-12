@@ -1,6 +1,7 @@
 //functionality
 import React, { useState } from "react";
 import BootcamperMatch from "../../Pages/BootcamperMatch";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //components
 
@@ -29,7 +30,9 @@ function BootcamperForm() {
   function catchBio(e) {
     setBio(e.target.value);
   }
-
+  function onClick(onclick) {
+    return onclick;
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -56,9 +59,7 @@ function BootcamperForm() {
 
   //console.log(displayName, email, interestedIndustry, interests, bio);
 
-
   return (
-
     <>
       <form>
         <label>
@@ -90,12 +91,13 @@ function BootcamperForm() {
             onChange={catchBio}
           ></textarea>
         </label>
-        <button onClick={handleSubmit} type="submit">
-          Submit Form
-        </button>
+        <Link to="/BootcampersHome">
+          <button onClick={(handleSubmit, onClick)} type="submit">
+            Submit Form
+          </button>
+        </Link>
       </form>
     </>
-
   );
 }
 

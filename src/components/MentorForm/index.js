@@ -1,12 +1,12 @@
 //functionality
 import React, { useState } from "react";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //components
 
 //css
 import styles from "./mentorForm.module.css";
 
-function MentorForm() {
+function MentorForm(event) {
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [industry, setIndustry] = useState("");
@@ -18,7 +18,8 @@ function MentorForm() {
   const [specialityLanguage, setSpecialityLanguage] = useState("");
   const [previousBootcamper, setPreviousBootcamper] = useState("");
   const [codingLanguages, setCodingLanguages] = useState("");
-
+  console.log(bio);
+  event.preventDefault();
   function catchName(e) {
     setDisplayName(e.target.value);
   }
@@ -57,6 +58,9 @@ function MentorForm() {
   function catchPreviousBootcamper(e) {
     setPreviousBootcamper(e.target.value);
   }
+  function onClick(onclick) {
+    return onclick;
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -84,6 +88,11 @@ function MentorForm() {
     })
       .then((response) => response.json())
       .then((data) => console.log(data));
+  }
+  function onlyShowOnce() {
+    if (bio != undefined || bio != null) {
+      return MentorForm;
+    } else return console.log("I've vanished");
   }
 
   //console.log(displayName, email, interestedIndustry, interests, bio);
@@ -169,9 +178,11 @@ function MentorForm() {
           ></input>
         </label>
         <label></label>
-        <button onClick={handleSubmit} type="submit">
-          Submit Form
-        </button>
+        <Link to="/MyProfile">
+          <button onClick={(handleSubmit, onclick, onlyShowOnce)} type="submit">
+            Submit Form
+          </button>
+        </Link>
       </form>
     </>
   );

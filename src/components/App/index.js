@@ -46,6 +46,9 @@ function App() {
           <Route path="/MentorsHome">
             <MentorMain />
           </Route>
+          <Route path="/MyProfile">
+            <MentorProfile />
+          </Route>
           <Route path="/myProfile">
             <BootcampersProfile />
           </Route>
