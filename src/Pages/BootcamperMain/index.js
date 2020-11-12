@@ -3,6 +3,7 @@ import React from "react";
 
 //components
 import Button from "../../components/Button/index";
+import BootcamperForm from "../../components/BootcamperForm/index";
 
 //css
 import styles from "./bootcampers.module.css";
@@ -21,8 +22,7 @@ function BootcamperHomepage() {
         information! This will take you to the mentor matching page once
         completed.
       </p>
-      <form></form>
-      <Button text={"Submit"} />
+      <BootcamperForm />
     </div>
   );
 }
