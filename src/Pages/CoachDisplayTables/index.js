@@ -10,36 +10,39 @@ import soc from "../../Images/soc.png";
 import styles from "./coachTables.module.css";
 
 function CoachDisplayTables() {
+  //bootcampers table
   const [bootcampersTable, setBootcampersTable] = useState([]);
+
+  // mentors table
   const [mentorsTable, setMentorsTable] = useState([]);
 
+  //get request for bootcampers data
   useEffect(() => {
     async function getBootcamper() {
       const response = await fetch(`http://localhost:5000/bootcampers`, {
         headers: { "Contetn-Type": "application/json" },
       });
       const data = await response.json();
-
+      // result - an array of objects
       setBootcampersTable(data.result);
     }
     getBootcamper();
   }, []);
-  console.log(bootcampersTable);
+  /*   console.log(bootcampersTable); */
 
+  //Get request for mentors data
   useEffect(() => {
     async function getMentor() {
       const response = await fetch(`http://localhost:5000/mentors`, {
         headers: { "Contetn-Type": "application/json" },
       });
       const data = await response.json();
+      //result - an array of objects
       setMentorsTable(data.result);
     }
     getMentor();
   }, []);
-  console.log(mentorsTable);
-
-  /* function deconstructMentorTable(mentorTable){
-  let mentorData=mentorTable.map() */
+  /* console.log(mentorsTable); */
 
   return (
     <div className={styles.tables}>
@@ -51,26 +54,28 @@ function CoachDisplayTables() {
       <h2>Bootcamper Information</h2>
       <table className={styles.BootcamperTable}>
         <thead>
+          {/* creates table head  */}
           <tr>
+            <th>ID Number </th>
             <th>Name</th>
             <th>Bio</th>
             <th>Interested Industry</th>
             <th>Interests</th>
             <th>Mentors I Like</th>
             <th>Email</th>
-            <th>ID Number </th>
           </tr>
         </thead>
+        {/* Map trough bootcampers array of objects and for each object creates a row in the table */}
         {bootcampersTable.map((bootcamper) => {
           return (
             <tr>
+              <td>{bootcamper.id}</td>
               <td>{bootcamper.name}</td>
               <td>{bootcamper.bio}</td>
               <td>{bootcamper.interested_industry}</td>
               <td>{bootcamper.interests}</td>
-              <td>{bootcamper.mentors_i_like}</td>
+              <td>{bootcamper.mentors_i_like.join(", ")}</td>
               <td>{bootcamper.email}</td>
-              <td>{bootcamper.id}</td>
             </tr>
           );
         })}
@@ -78,7 +83,9 @@ function CoachDisplayTables() {
       <h2>Mentor Information</h2>
       <table>
         <thead>
+          {/* creates table head  */}
           <tr>
+            <th>ID Number</th>
             <th>Name</th>
             <th>Bio</th>
             <th>Coding Languages</th>
@@ -90,12 +97,13 @@ function CoachDisplayTables() {
             <th>Interests</th>
             <th>Previous Bootcamper</th>
             <th>Email</th>
-            <th>ID Number</th>
           </tr>
         </thead>
+        {/* Map trough mentors array of objects and for each object creates a row in the table */}
         {mentorsTable.map((mentor) => {
           return (
             <tr>
+              <td>{mentor.id}</td>
               <td>{mentor.name}</td>
               <td>{mentor.bio}</td>
               <td>{mentor.coding_languages}</td>
@@ -105,9 +113,12 @@ function CoachDisplayTables() {
               <td>{mentor.present_role}</td>
               <td>{mentor.role_description}</td>
               <td>{mentor.interests}</td>
-              <td>{mentor.previous_bootcamper}</td>
+              <td>
+                {mentor.previous_bootcamper
+                  ? "Is a previous bootcamper"
+                  : "Is not a previous bootcamper"}
+              </td>
               <td>{mentor.email}</td>
-              <td>{mentor.id}</td>
             </tr>
           );
         })}

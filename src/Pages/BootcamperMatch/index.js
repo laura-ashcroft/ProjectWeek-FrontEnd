@@ -1,8 +1,9 @@
 //functionality
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 //components
 import Button from "../../components/Button/index";
+import MentorDisplayCards from "../../components/MentorDisplayCards/index";
 
 //css
 import styles from "./match.module.css";
@@ -11,6 +12,30 @@ import styles from "./match.module.css";
 import soc from "../../Images/soc.png";
 
 function BootcamperMatch() {
+  const [mentors, setMentors] = useState([]);
+  const [chosenArray, setChosenArray] = useState([]);
+
+  useEffect(() => {
+    setMentors([]);
+    fetch("http://localhost:5000/mentors")
+      .then((response) => response.json())
+      .then((data) => setMentors([...mentors, ...data.result]));
+  }, []);
+
+  function handleSubmit() {
+    fetch("http://localhost:5000/bootcampers/1", {
+      method: "PATCH",
+      body: JSON.stringify({ mentors_i_like: chosenArray }),
+      headers: {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      mode: "cors",
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }
+
   return (
     <div className={styles.bootcampermatch}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
@@ -25,7 +50,19 @@ function BootcamperMatch() {
         due to the size of the cohort this may not always be possible. Please
         check for updates on mentor pairing prior to the course start date.
       </p>
-      <Button text={"Submit"} />
+      <div className={styles.cardArea}>
+        {mentors.map((mentor) => {
+          return (
+            <MentorDisplayCards
+              key={mentor.google_id}
+              mentor={mentor}
+              chosenFn={setChosenArray}
+              chosenArray={chosenArray}
+            />
+          );
+        })}
+      </div>
+      <Button text={"Submit"} onClick={handleSubmit} />
     </div>
   );
 }
