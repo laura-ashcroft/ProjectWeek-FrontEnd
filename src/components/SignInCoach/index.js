@@ -15,7 +15,7 @@ function AskForPassword() {
   const [value, setValue] = useState("");
 
   function checkCorrect() {
-    console.log("hell from check correct");
+    console.log("hello from check correct");
     if (value === "tits") {
       setIsTrue(true);
     }
@@ -40,6 +40,7 @@ function AskForPassword() {
         <Button
           onClick={() => {
             checkCorrect();
+            console.log("clicked");
           }}
         >
           <Link to={isTrue ? "/coaches" : ""}>Submit</Link>

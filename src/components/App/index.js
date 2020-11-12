@@ -22,12 +22,13 @@ function App() {
     <Router>
       <CoachSignIn />
       <div className="App">
-        <Button>
-          <Link to="/Coaches">Coach</Link>
-        </Button>
+        //having edited the button... it takes to new page! but displays below!
         <nav className="navButtons">{/* <HomePage /> */}</nav>
+        <button>
+          <Link to="/Coaches">Coach</Link>
+        </button>
         <Switch>
-          <Route path="coachesMain">
+          <Route path="/Coaches">
             <CoachesMain />
           </Route>
         </Switch>
