@@ -1,8 +1,9 @@
 //functionality
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //components
-
+import Button from "../../components/Button/index";
 //images
 import soc from "../../Images/soc.png";
 
@@ -51,6 +52,9 @@ function CoachDisplayTables() {
       <p>
         Information for Bootcampers and Mentors are found in the tables below.
       </p>
+      <Link to="/">
+        <Button text="back" />
+      </Link>
       <h2>Bootcamper Information</h2>
       <table className={styles.BootcamperTable}>
         <thead>

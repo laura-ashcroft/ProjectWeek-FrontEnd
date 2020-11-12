@@ -38,16 +38,14 @@ function BootcamperForm() {
     setBio(e.target.value);
   }
 
-    async function handleSubmit() {
-        const response = await fetch(`http://localhost:5000/bootcampers`, {
-          headers: { "Contetn-Type": "application/json" },
-        });
-        const data = await response.json();
-        setMentorsTable(data.result);
-      }
-      getMentor();
-    }
-
+  async function handleSubmit() {
+    const response = await fetch(`http://localhost:5000/bootcampers`, {
+      headers: { "Contetn-Type": "application/json" },
+    });
+    const data = await response.json();
+    // setMentorsTable(data.result);
+  }
+  // getMentor();
 
   //   function handleSubmit(e) {
   //     setFormData({
@@ -61,44 +59,38 @@ function BootcamperForm() {
   //   console.log(formData);
   //   console.log(displayName, email, interestedIndustry, interests, bio);
   return (
-    <>
-      <form
-      // onSubmit={() => {
-      //   handleSubmit();
-      // }}
-      >
-        <label>
-          Name:
-          <input type="text" name="displayName" onChange={catchName}></input>
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" onChange={catchEmail}></input>
-        </label>
-        <label>
-          Interested Industry:
-          <input
-            type="text"
-            name="interestedIndustry"
-            onChange={catchIndustry}
-          ></input>
-        </label>
-        <label>
-          Interests:
-          <input type="text" name="interests" onChange={catchInterests}></input>
-        </label>
-        <label>
-          Bio:
-          <textarea
-            name="bio"
-            cols="30"
-            rows="10"
-            onChange={catchBio}
-          ></textarea>
-        </label>
-        <button type="submit">Submit Form</button>
-      </form>
-    </>
+    <form
+    // onSubmit={() => {
+    //   handleSubmit();
+    // }}
+    >
+      <label>
+        Name:
+        <input type="text" name="displayName" onChange={catchName}></input>
+      </label>
+      <label>
+        Email:
+        <input type="email" name="email" onChange={catchEmail}></input>
+      </label>
+      <label>
+        Interested Industry:
+        <input
+          type="text"
+          name="interestedIndustry"
+          onChange={catchIndustry}
+        ></input>
+      </label>
+      <label>
+        Interests:
+        <input type="text" name="interests" onChange={catchInterests}></input>
+      </label>
+      <label>
+        Bio:
+        <textarea name="bio" cols="30" rows="10" onChange={catchBio}></textarea>
+      </label>
+      <Link to
+      <button type="submit">Submit Form</button>
+    </form>
   );
 }
 

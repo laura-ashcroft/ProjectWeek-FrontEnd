@@ -8,6 +8,7 @@ import { logout } from "../Firebase";
 
 //components
 import Button from "../Button/index";
+import BootcampersForm from "../BootcamperForm/index";
 //css
 import styles from "./signInBootcamper.module.css";
 
@@ -49,7 +50,7 @@ function BootcamperSignIn() {
           completed.
         </p>
       )}
-      <form></form>
+      {user && <BootcampersForm />}
       {user && (
         <Link to="/BootcampersHome">
           <Button text={"Submit"} />

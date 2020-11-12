@@ -53,7 +53,7 @@ function BootcamperMatch() {
         due to the size of the cohort this may not always be possible. Please
         check for updates on mentor pairing prior to the course start date.
       </p>
-<<<<<<< HEAD
+
       <div className={styles.cardArea}>
         {mentors.map((mentor) => {
           return (
@@ -69,7 +69,7 @@ function BootcamperMatch() {
       <Link to="/myProfile">
         <Button text={"Submit"} onClick={handleSubmit} />
       </Link>
-=======
+
       {!patchSent && (
         <div className={styles.cardArea}>
           {mentors.map((mentor) => {
@@ -91,7 +91,6 @@ function BootcamperMatch() {
           <p>Thank you! Your preferences have been saved!</p>
         </div>
       )}
->>>>>>> a23b955dbd7a5e2c2d265a8c9e0badf674dbcbaa
     </div>
   );
 }
