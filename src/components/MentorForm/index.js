@@ -64,12 +64,12 @@ function MentorForm({ state }) {
     return onclick;
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit() {
+    //event.preventDefault();
     fetch("http://localhost:5000/mentors", {
       method: "POST",
       body: JSON.stringify({
-        name: displayName,
+        name: state.displayName,
         bio: bio,
         coding_languages: codingLanguages,
         speciality_language: specialityLanguage,
@@ -79,7 +79,7 @@ function MentorForm({ state }) {
         role_description: roleDescription,
         interests: interests,
         previous_bootcamper: previousBootcamper,
-        email: email,
+        email: state.email,
         google_id: state.uid,
       }),
       headers: {
@@ -90,20 +90,18 @@ function MentorForm({ state }) {
     })
       .then((response) => response.json())
       .then((data) => console.log(data));
+    console.log("handlesubmit working");
   }
 
-  function onlyShowOnce() {
-    if (bio != undefined || bio != null) {
-      return MentorForm;
-    } else return console.log("I've vanished");
-  }
   useEffect(() => {
     fetch(`http://localhost:5000/mentors/${state.uid}`)
       .then((response) => response.json())
       .then((data) => {
-        if (data.result.uid === state.uid) {
-          setDbMentorInfo(true);
-          console.log(state.uid);
+        if (data.result !== undefined) {
+          if (data.result.google_id === state.uid) {
+            setDbMentorInfo(true);
+            console.log(state.uid);
+          }
         }
       });
     console.log(dbMentorInfo);
@@ -113,7 +111,7 @@ function MentorForm({ state }) {
 
   return (
     <>
-      {dbMentorInfo && (
+      {!dbMentorInfo && (
         <form>
           <label>
             Name:
@@ -208,10 +206,7 @@ function MentorForm({ state }) {
           </label>
           <label></label>
           <Link to="/MyProfile">
-            <button
-              onClick={(handleSubmit, onclick, onlyShowOnce)}
-              type="submit"
-            >
+            <button onClick={handleSubmit} type="submit">
               Submit Form
             </button>
           </Link>
