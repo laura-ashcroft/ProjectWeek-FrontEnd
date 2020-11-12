@@ -7,6 +7,7 @@ import styles from "./coaches.module.css";
 
 //Components
 import AskForPassword from "../../components/SignInCoach/index";
+import Button from "../../components/Button/index";
 
 //images
 import soc from "../../Images/soc.png";
@@ -21,6 +22,9 @@ function CoachSignIn() {
         <h2>Welcome, Coach!</h2>
         <p>Please enter the coach password below:</p>
         <AskForPassword />
+        <Link to="/">
+          <Button text="back" />
+        </Link>
       </nav>
     </div>
   );

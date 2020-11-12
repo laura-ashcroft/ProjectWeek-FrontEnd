@@ -22,20 +22,10 @@ import CoachSignIn from "../../Pages/CoachesMain";
 
 function App() {
   return (
-    <BootcamperHomepage />
     <Router>
-
-      {/* <CoachSignIn /> */}
-      <BootcamperMatch />
       <div className="App">
         {/* //having edited the button... it takes to new page! but displays below! */}
         <nav className="navButtons">{/* <HomePage /> */}</nav>
-        <button>
-          <Link to="/Coaches">Coach</Link>
-        </button>
-
-      <div className="App">
-
 
         <Switch>
           <Route path="/CoachesTable">
@@ -45,13 +35,16 @@ function App() {
             <BootcamperSignIn />
           </Route>
           <Route path="/Mentor">
-            <MentorMain />
+            <MentorSignIn />
           </Route>
           <Route path="/Coach">
             <CoachesMain />
           </Route>
           <Route path="/BootcampersHome">
             <BootcamperMain />
+          </Route>
+          <Route path="/MentorsHome">
+            <MentorMain />
           </Route>
           <Route path="/myProfile">
             <BootcampersProfile />
@@ -66,7 +59,6 @@ function App() {
         </Switch>
       </div>
     </Router>
-
   );
 }
 

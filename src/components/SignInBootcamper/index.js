@@ -8,6 +8,7 @@ import { logout } from "../Firebase";
 
 //components
 import Button from "../Button/index";
+import BootcampersForm from "../BootcamperForm/index";
 //css
 import styles from "./signInBootcamper.module.css";
 
@@ -25,7 +26,6 @@ function BootcamperSignIn() {
     <div className={styles.signInDiv}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
       <h2>Welcome To School of Code Mentoring</h2>
-      {!user && <p>Please sign in</p>}
       {!user && (
         <img
           className={styles.googleSignIn}
@@ -37,6 +37,11 @@ function BootcamperSignIn() {
       {user && (
         <Button className={styles.signOut} onClick={logout} text={"Log Out"} />
       )}
+      {!user && (
+        <Link to="/">
+          <Button text="back" />
+        </Link>
+      )}
       {user && <p>Welcome, {user.displayName}</p>}
       {user && (
         <p>
@@ -45,7 +50,7 @@ function BootcamperSignIn() {
           completed.
         </p>
       )}
-      <form></form>
+      {user && <BootcampersForm />}
       {user && (
         <Link to="/BootcampersHome">
           <Button text={"Submit"} />

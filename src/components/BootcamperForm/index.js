@@ -30,6 +30,7 @@ function BootcamperForm() {
     setBio(e.target.value);
   }
 
+
   function handleSubmit(event) {
     event.preventDefault();
     fetch("http://localhost:5000/bootcampers", {
@@ -55,7 +56,9 @@ function BootcamperForm() {
 
   //console.log(displayName, email, interestedIndustry, interests, bio);
 
+
   return (
+
     <>
       <form>
         <label>
@@ -92,6 +95,7 @@ function BootcamperForm() {
         </button>
       </form>
     </>
+
   );
 }
 

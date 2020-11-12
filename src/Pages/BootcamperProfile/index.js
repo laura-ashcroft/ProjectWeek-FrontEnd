@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //components
-
+import Button from "../../components/Button/index";
 //css
 import styles from "./bootcamperprofile.module.css";
 
@@ -23,6 +23,9 @@ function BootcamperProfile() {
         If there are any issues with your profile information, please contact
         the School of Code on bootcamp@schoolofcode.co.uk
       </p>
+      <Link to="/BootcampersHome">
+        <Button text="back" />
+      </Link>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 //functionality
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //components
 import Button from "../../components/Button/index";
@@ -52,6 +53,23 @@ function BootcamperMatch() {
         due to the size of the cohort this may not always be possible. Please
         check for updates on mentor pairing prior to the course start date.
       </p>
+
+      <div className={styles.cardArea}>
+        {mentors.map((mentor) => {
+          return (
+            <MentorDisplayCards
+              key={mentor.google_id}
+              mentor={mentor}
+              chosenFn={setChosenArray}
+              chosenArray={chosenArray}
+            />
+          );
+        })}
+      </div>
+      <Link to="/myProfile">
+        <Button text={"Submit"} onClick={handleSubmit} />
+      </Link>
+
       {!patchSent && (
         <div className={styles.cardArea}>
           {mentors.map((mentor) => {
