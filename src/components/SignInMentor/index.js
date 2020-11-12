@@ -39,7 +39,14 @@ function MentorSignIn({ setMentorGoogle }) {
       )}
 
       {user && (
-        <Button className={styles.signOut} onClick={logout} text={"Log Out"} />
+        <Button
+          className={styles.signOut}
+          onClick={() => {
+            logout();
+            //setMentorGoogle({ uid: 0 });
+          }}
+          text={"Log Out"}
+        />
       )}
       {!user && (
         <Link to="/">
