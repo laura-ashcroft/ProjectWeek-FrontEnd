@@ -48,14 +48,14 @@ function CoachDisplayTables() {
   return (
     <div className={styles.tables}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
-      <h2>Welcome, Coach!</h2>
-      <p>
+      <h2 class={styles.welcomeh2}>Welcome, Coach!</h2>
+      <p class={styles.pTag}>
         Information for Bootcampers and Mentors are found in the tables below.
       </p>
       <Link to="/">
         <Button text="Back" />
       </Link>
-      <h2>Bootcamper Information</h2>
+      <h2 class={styles.h2}>Bootcamper Information</h2>
       <table className={styles.BootcamperTable}>
         <thead>
           {/* creates table head  */}
@@ -65,7 +65,7 @@ function CoachDisplayTables() {
             <th>Bio</th>
             <th>Interested Industry</th>
             <th>Interests</th>
-            <th>Mentors I Like</th>
+            <th className={styles.mentorsList}>Selected Mentors</th>
             <th>Email</th>
           </tr>
         </thead>
@@ -78,14 +78,17 @@ function CoachDisplayTables() {
               <td>{bootcamper.bio}</td>
               <td>{bootcamper.interested_industry}</td>
               <td>{bootcamper.interests}</td>
-              <td>{bootcamper.mentors_i_like}</td>
+              <td className={styles.mentorTd}>
+                {bootcamper.mentors_i_like &&
+                  bootcamper.mentors_i_like.join(", ")}
+              </td>
               <td>{bootcamper.email}</td>
             </tr>
           );
         })}
       </table>
-      <h2>Mentor Information</h2>
-      <table>
+      <h2 class={styles.h2}>Mentor Information</h2>
+      <table class={styles.mentorsTable}>
         <thead>
           {/* creates table head  */}
           <tr>
