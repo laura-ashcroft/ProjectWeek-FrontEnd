@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styles from "./bootcamperForm.module.css";
 
 function BootcamperForm({ state }) {
-   const [displayName, setDisplayName] = useState("");
+  const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [interestedIndustry, setInterestedIndustry] = useState("");
   const [interests, setInterests] = useState("");
@@ -20,7 +20,7 @@ function BootcamperForm({ state }) {
   }
   function catchEmail(e) {
     setEmail(e.target.value);
-  } 
+  }
   function catchIndustry(e) {
     setInterestedIndustry(e.target.value);
   }

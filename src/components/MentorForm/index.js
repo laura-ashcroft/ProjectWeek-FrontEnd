@@ -22,12 +22,12 @@ function MentorForm({ state }) {
   console.log(state);
   console.log(bio);
   // event.preventDefault();
-   function catchName(e) {
+  function catchName(e) {
     setDisplayName(e.target.value);
   }
   function catchEmail(e) {
     setEmail(e.target.value);
-  } 
+  }
   function catchIndustry(e) {
     setIndustry(e.target.value);
   }
@@ -60,7 +60,7 @@ function MentorForm({ state }) {
   function catchPreviousBootcamper(e) {
     setPreviousBootcamper(e.target.value);
   }
-  
+
   function handleSubmit(event) {
     event.preventDefault();
     fetch("http://localhost:5000/mentors", {
@@ -111,7 +111,7 @@ function MentorForm({ state }) {
       {!dbMentorInfo && (
         <form>
           <label>
-            Name:
+            Name: <br />
             <input
               type="text"
               name="displayName"
@@ -120,7 +120,7 @@ function MentorForm({ state }) {
             ></input>
           </label>
           <label>
-            Email:
+            Email: <br />
             <input
               type="email"
               name="email"
@@ -129,7 +129,7 @@ function MentorForm({ state }) {
             ></input>
           </label>
           <label>
-            Industry:
+            Industry: <br />
             <input
               type="text"
               name="interestedIndustry"
@@ -137,7 +137,7 @@ function MentorForm({ state }) {
             ></input>
           </label>
           <label>
-            Current Business:
+            Current Business: <br />
             <input
               type="text"
               name="currentBusiness"
@@ -145,7 +145,7 @@ function MentorForm({ state }) {
             ></input>
           </label>
           <label>
-            Current Role:
+            Current Role: <br />
             <input
               type="text"
               name="currentRole"
@@ -153,7 +153,7 @@ function MentorForm({ state }) {
             ></input>
           </label>
           <label>
-            Role Description:
+            Role Description: <br />
             <input
               type="text"
               name="roleDescription"
@@ -161,23 +161,24 @@ function MentorForm({ state }) {
             ></input>
           </label>
           <label>
-            Coding Languages:
+            Coding Languages: <br />
             <input
               type="text"
               name="codingLanguages"
               onChange={catchCodingLanguages}
             ></input>
-            <label>
-              Speciality Language:
-              <input
-                type="text"
-                name="specialityLanguage"
-                onChange={catchSpecialityLanguage}
-              ></input>
-            </label>
           </label>
           <label>
-            Interests:
+            Speciality Language:
+            <br />
+            <input
+              type="text"
+              name="specialityLanguage"
+              onChange={catchSpecialityLanguage}
+            ></input>
+          </label>
+          <label>
+            Interests: <br />
             <input
               type="text"
               name="interests"
@@ -185,7 +186,7 @@ function MentorForm({ state }) {
             ></input>
           </label>
           <label>
-            Bio:
+            Bio: <br />
             <textarea
               name="bio"
               cols="30"
@@ -194,7 +195,7 @@ function MentorForm({ state }) {
             ></textarea>
           </label>
           <label>
-            Are You A Previous Bootcamper? (true/false)
+            Are You A Previous Bootcamper? (true/false) <br />
             <input
               type="text"
               name="previousBootcamper"

@@ -1,5 +1,6 @@
 //functionality
 import React from "react";
+import { motion } from "framer-motion";
 
 //components
 import Button from "../../components/Button/index";
@@ -13,7 +14,12 @@ import soc from "../../Images/soc.png";
 function MentorHomepage({ state }) {
   return (
     <div className={styles.mentorhome}>
-      <img className={styles.socLogo} src={soc} alt="school of code logo" />
+      <motion.img
+        whileHover={{ scale: 1.2, transition: { duration: 1 } }}
+        className={styles.socLogo}
+        src={soc}
+        alt="school of code logo"
+      />{" "}
       <h2>Mentors Homepage</h2>
       <h3>Welcome to the School of Code!</h3>
       <p>

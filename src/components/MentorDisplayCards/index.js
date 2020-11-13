@@ -17,7 +17,8 @@ function MentorDisplayCards({ mentor, chosenFn, chosenArray }) {
       <ul>
         <li>{mentor.name}</li>
         <li>
-          <strong>Present Job:</strong> {mentor.present_role}
+          <strong>Present Job: </strong>
+          {mentor.present_role}
         </li>
         <li>
           <strong>Company:</strong>
@@ -27,22 +28,30 @@ function MentorDisplayCards({ mentor, chosenFn, chosenArray }) {
           <strong>Industry:</strong>
           {mentor.industry}
         </li>
+        {/* <li>
+          <strong>Job Description: </strong>
+          {mentor.role_description}
+        </li> */}
         <li>
-          <strong>Job Description:</strong> {mentor.role_description}
+          <strong>Description: </strong> {mentor.role_description}
         </li>
         <li>
           <strong>Speciality Language:</strong>
+
           {mentor.speciality_language}
         </li>
         <li>
-          <strong>Coding Languages:</strong> {mentor.coding_languages}
+          <strong>Coding Languages:</strong>
+          {mentor.coding_languages}
         </li>
         <li>
           <strong>Bio: </strong>
+
           {mentor.bio}
         </li>
         <li>
-          <strong>Interests:</strong> {mentor.interests}
+          <strong>Interests:</strong>
+          {mentor.interests}
         </li>
         <li>
           {mentor.previous_bootcamper

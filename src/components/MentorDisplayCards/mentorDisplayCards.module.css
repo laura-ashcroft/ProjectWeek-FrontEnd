@@ -1,30 +1,34 @@
 .card {
-  width: 300px;
+  width: 350px;
   background-color: rgba(255, 255, 255, 0.15);
   padding: 15px;
   margin: 15px;
   color: white;
-  text-align: center;
+  text-align: left;
   border-radius: 5%;
   line-height: 1.6;
 }
 
 .card ul {
   list-style-type: none;
-  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-width: 300px;
 }
 
-.card ul li:nth-child(1) {
+/* .card ul li:nth-child(1) {
   align-self: center;
   font-weight: bold;
   text-decoration: underline;
   margin-bottom: 5px;
+  padding: 0;
+  margin: 0;
 }
 
 .card ul li:nth-child(5) {
   text-align: left;
-}
+  padding: 0;
+  margin: 0;
+} */
