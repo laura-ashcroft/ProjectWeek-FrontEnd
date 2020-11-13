@@ -3,3 +3,11 @@ form {
   flex-flow: column wrap;
   align-items: center;
 }
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
