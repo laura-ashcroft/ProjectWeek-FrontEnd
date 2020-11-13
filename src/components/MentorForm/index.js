@@ -109,10 +109,10 @@ function MentorForm({ state }) {
   //console.log(displayName, email, interestedIndustry, interests, bio);
 
   return (
-    <>
+    <div className={styles.overall}>
       {!dbMentorInfo && (
         <div className={formClass ? styles.show : styles.hide}>
-          <p>
+          <p className={styles.ptag}>
             Please complete the form below and make sure you submit your
             information! This will put you in the pool of mentors for the
             current cohort. Thank you for your submission!
@@ -220,7 +220,7 @@ function MentorForm({ state }) {
           </form>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
