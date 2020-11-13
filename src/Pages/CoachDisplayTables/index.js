@@ -54,7 +54,6 @@ function CoachDisplayTables() {
         src={soc}
         alt="school of code logo"
       />{" "}
-      <img className={styles.socLogo} src={soc} alt="school of code logo" />
       <h2 class={styles.welcomeh2}>Welcome, Coach!</h2>
       <p class={styles.pTag}>
         Information for Bootcampers and Mentors are found in the tables below.
