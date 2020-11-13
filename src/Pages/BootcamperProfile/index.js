@@ -24,18 +24,10 @@ function BootcamperProfile({ state }) {
   return (
     <div className={styles.bootcamperprofile}>
       <img className={styles.socLogo} src={soc} alt="school of code logo" />
-      <h2>Welcome {state.displayName} to your profile!</h2>
-      <p>
-        Thanks for filling in the bootcamper sign up form for this cohort!
-        Please view your account details below.
-      </p>
-      <p>
-        If there are any issues with your profile information, please contact
-        the School of Code on bootcamp@schoolofcode.co.uk
-      </p>
-      <table className={styles.BootcamperTable}>
+      <h1>Welcome to your profile, {state.displayName}!</h1>
+
+      {/* <table className={styles.BootcamperTable}>
         <thead>
-          {/* creates table head  */}
           <tr>
             <th>ID Number </th>
             <th>Name</th>
@@ -59,9 +51,45 @@ function BootcamperProfile({ state }) {
             <td>{dbInfo.email}</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
+      <div className={styles.profileInfo}>
+        <p>
+          <b>ID:</b> {dbInfo.id}
+        </p>
+        <p>
+          <b>Name:</b> {dbInfo.name}
+        </p>
+        <p>
+          <b>Bio:</b> {dbInfo.bio}
+        </p>
+        <p>
+          <b>Interested Industry:</b> {dbInfo.interested_industry}
+        </p>
+        <p>
+          <b>Interests:</b> {dbInfo.interests}
+        </p>
+        <p>
+          <b>Selected Mentors:</b>{" "}
+          {dbInfo.mentors_i_like && dbInfo.mentors_i_like.join(", ")}
+        </p>
+        <p>
+          <b>Email Address:</b> {dbInfo.email}
+        </p>
+      </div>
+      <br />
+      <br />
+      <div className={styles.profileLink}>
+        <p>
+          If there are any issues with your profile information, please contact
+          the School of Code on{" "}
+          <a href="mailto: bootcamp@schoolofcode.co.uk">
+            bootcamp@schoolofcode.co.uk
+          </a>
+        </p>
+      </div>
+      <br />
       <Link to="/BootcampersHome">
-        <Button text="back" />
+        <Button text="Back" />
       </Link>
     </div>
   );

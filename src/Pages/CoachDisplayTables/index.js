@@ -53,7 +53,7 @@ function CoachDisplayTables() {
         Information for Bootcampers and Mentors are found in the tables below.
       </p>
       <Link to="/">
-        <Button text="back" />
+        <Button text="Back" />
       </Link>
       <h2>Bootcamper Information</h2>
       <table className={styles.BootcamperTable}>

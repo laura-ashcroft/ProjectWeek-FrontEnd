@@ -23,7 +23,7 @@ function CoachSignIn() {
         <p>Please enter the coach password below:</p>
         <AskForPassword />
         <Link to="/">
-          <Button text="back" />
+          <Button text="Back" />
         </Link>
       </nav>
     </div>

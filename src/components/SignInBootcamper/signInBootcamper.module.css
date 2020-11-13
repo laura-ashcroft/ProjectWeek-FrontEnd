@@ -1,9 +1,15 @@
-h2 {
-  color: white;
-}
+/* .heading {
+  margin-bottom: 30px;
+} */
 
 .googleSignIn {
   width: 300px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.googleSignIn:hover {
+  box-shadow: 1px 1px 2px gray, 0 0 25px gray, 0 0 5px gray;
 }
 
 .spinnerGif {
@@ -16,11 +22,17 @@ h2 {
 
 .socLogo {
   width: 250px;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .signInDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
 }

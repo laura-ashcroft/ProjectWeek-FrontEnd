@@ -11,4 +11,6 @@
 
 p {
   color: white;
+  max-width: 60%;
+  text-align: center;
 }

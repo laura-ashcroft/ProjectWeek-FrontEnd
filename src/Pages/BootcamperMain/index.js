@@ -25,10 +25,10 @@ function BootcamperHomepage() {
         <Button text={"My Profile"} />
       </Link>
       <Link to="/mentorMatching">
-        <Button text={"View mentors"} />
+        <Button text={"View Mentors"} />
       </Link>
       <Link to="/Bootcamper">
-        <Button text="back" />
+        <Button text="Back" />
       </Link>
     </div>
   );
