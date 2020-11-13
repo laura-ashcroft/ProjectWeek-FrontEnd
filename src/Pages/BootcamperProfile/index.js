@@ -68,10 +68,10 @@ function BootcamperProfile({ state }) {
         <p>
           <b>Interests:</b> {dbInfo.interests}
         </p>
-        <p>
+        {/* <p>
           <b>Selected Mentors:</b>{" "}
           {dbInfo.mentors_i_like && dbInfo.mentors_i_like.join(", ")}
-        </p>
+        </p> */}
         <p>
           <b>Email Address:</b> {dbInfo.email}
         </p>

@@ -15,7 +15,7 @@ function MentorDisplayCards({ mentor, chosenFn, chosenArray }) {
         chosenArray={chosenArray}
       />
       <ul>
-        <li>{mentor.name}</li>
+        <li>Mentor #{mentor.id}</li>
         <li>
           <strong>Present Job:</strong> {mentor.present_role}
         </li>
