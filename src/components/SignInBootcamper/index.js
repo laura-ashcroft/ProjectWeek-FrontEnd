@@ -1,6 +1,8 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 //auth
 import firebase from "firebase/app";
 import { signInWithRedirect } from "../Firebase";
@@ -25,7 +27,14 @@ function BootcamperSignIn({ setUserGoogle }) {
   return (
     <div className={styles.signInDiv}>
       <nav className={styles.signInNav}>
-        <img className={styles.socLogo} src={soc} alt="school of code logo" />
+        <a href="https://www.schoolofcode.co.uk" target="blank">
+          <motion.img
+            whileHover={{ scale: 1.2, transition: { duration: 1 } }}
+            className={styles.socLogo}
+            src={soc}
+            alt="school of code logo"
+          />
+        </a>
         <h2 className={styles.heading}>
           Welcome To School of Code Mentoring, Bootcamper
         </h2>
@@ -37,13 +46,7 @@ function BootcamperSignIn({ setUserGoogle }) {
             onClick={signInWithRedirect}
           />
         )}
-        {user && (
-          <Button
-            className={styles.signOut}
-            onClick={logout}
-            text={"Log Out"}
-          />
-        )}
+
         {!user && (
           <Link to="/">
             <Button text="Back" />
@@ -57,7 +60,13 @@ function BootcamperSignIn({ setUserGoogle }) {
             <Button text={"Next"} />
           </Link>
         )}
-
+        {user && (
+          <Button
+            className={styles.signOut}
+            onClick={logout}
+            text={"Log Out"}
+          />
+        )}
         {/*{user && <h2>Sign Out Of School of Code Mentoring</h2>}*/}
         {loading && (
           <img

@@ -2,6 +2,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 //auth
 import firebase from "firebase/app";
@@ -27,7 +28,14 @@ function MentorSignIn({ setMentorGoogle }) {
   setMentorGoogle(user);
   return (
     <div className={styles.signInDiv}>
-      <img classname={styles.socLogo} src={soc} alt="school of code logo" />
+      <a href="https://www.schoolofcode.co.uk" target="blank">
+        <motion.img
+          whileHover={{ scale: 1.2, transition: { duration: 1 } }}
+          className={styles.socLogo}
+          src={soc}
+          alt="school of code logo"
+        />
+      </a>{" "}
       <h2>Welcome To School of Code Mentoring</h2>
       {!user && (
         <img
@@ -37,7 +45,6 @@ function MentorSignIn({ setMentorGoogle }) {
           onClick={signInWithRedirect}
         />
       )}
-
       {user && (
         <Button
           className={styles.signOut}
@@ -56,7 +63,6 @@ function MentorSignIn({ setMentorGoogle }) {
       {user && <p>Welcome, {user.displayName}</p>}
 
       {user && <MentorsForm state={user} />}
-
       {loading && (
         <img
           className={styles.spinnerGif}

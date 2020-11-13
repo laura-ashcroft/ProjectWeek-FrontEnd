@@ -1,6 +1,7 @@
 //functionality
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 //components
 import Button from "../../components/Button/index";
@@ -41,9 +42,14 @@ function BootcamperMatch({ state }) {
 
   return (
     <div className={styles.bootcampermatch}>
-      <img className={styles.socLogo} src={soc} alt="school of code logo" />
+      <motion.img
+        whileHover={{ scale: 1.2, transition: { duration: 1 } }}
+        className={styles.socLogo}
+        src={soc}
+        alt="school of code logo"
+      />
       <div className={styles.instructions}>
-        <h2>Mentor Matching!</h2>
+        <h1>Mentor Matching!</h1>
         <p>
           Below you will find all mentors for your School of Code cohort. Please
           select a minimum of 5 mentors you would be happy to be paired with.

@@ -111,113 +111,115 @@ function MentorForm({ state }) {
   return (
     <>
       {!dbMentorInfo && (
-        <div className={formClass ? styles.show : styles.hide}>
+
+       
+       <div className={formClass ? styles.show : styles.hide}>
           <p>
             Please complete the form below and make sure you submit your
             information! This will put you in the pool of mentors for the
             current cohort. Thank you for your submission!
           </p>
 
-          <form>
-            <label>
-              Name:
-              <input
-                type="text"
-                name="displayName"
-                onChange={catchName}
-                value={state.displayName}
-              ></input>
-            </label>
-            <label>
-              Email:
-              <input
-                type="email"
-                name="email"
-                onChange={catchEmail}
-                value={state.email}
-              ></input>
-            </label>
-            <label>
-              Industry:
-              <input
-                type="text"
-                name="interestedIndustry"
-                onChange={catchIndustry}
-              ></input>
-            </label>
-            <label>
-              Current Business:
-              <input
-                type="text"
-                name="currentBusiness"
-                onChange={catchCurrentBusiness}
-              ></input>
-            </label>
-            <label>
-              Current Role:
-              <input
-                type="text"
-                name="currentRole"
-                onChange={catchCurrentRole}
-              ></input>
-            </label>
-            <label>
-              Role Description:
-              <input
-                type="text"
-                name="roleDescription"
-                onChange={catchRoleDescription}
-              ></input>
-            </label>
-            <label>
-              Coding Languages:
-              <input
-                type="text"
-                name="codingLanguages"
-                onChange={catchCodingLanguages}
-              ></input>
-              <label>
-                Speciality Language:
-                <input
-                  type="text"
-                  name="specialityLanguage"
-                  onChange={catchSpecialityLanguage}
-                ></input>
-              </label>
-            </label>
-            <label>
-              Interests:
-              <input
-                type="text"
-                name="interests"
-                onChange={catchInterests}
-              ></input>
-            </label>
-            <label>
-              Bio:
-              <textarea
-                name="bio"
-                cols="30"
-                rows="10"
-                onChange={catchBio}
-              ></textarea>
-            </label>
-            <label>
-              Are You A Previous Bootcamper? (true/false)
-              <input
-                type="text"
-                name="previousBootcamper"
-                onChange={catchPreviousBootcamper}
-              ></input>
-            </label>
-            <label></label>
-            <Link to="/MyProfile">
-              <button onClick={handleSubmit} type="submit">
-                Submit Form
-              </button>
-            </Link>
-          </form>
-        </div>
+        <form>
+          <label>
+            Name: <br />
+            <input
+              type="text"
+              name="displayName"
+              onChange={catchName}
+              value={state.displayName}
+            ></input>
+          </label>
+          <label>
+            Email: <br />
+            <input
+              type="email"
+              name="email"
+              onChange={catchEmail}
+              value={state.email}
+            ></input>
+          </label>
+          <label>
+            Industry: <br />
+            <input
+              type="text"
+              name="interestedIndustry"
+              onChange={catchIndustry}
+            ></input>
+          </label>
+          <label>
+            Current Business: <br />
+            <input
+              type="text"
+              name="currentBusiness"
+              onChange={catchCurrentBusiness}
+            ></input>
+          </label>
+          <label>
+            Current Role: <br />
+            <input
+              type="text"
+              name="currentRole"
+              onChange={catchCurrentRole}
+            ></input>
+          </label>
+          <label>
+            Role Description: <br />
+            <input
+              type="text"
+              name="roleDescription"
+              onChange={catchRoleDescription}
+            ></input>
+          </label>
+          <label>
+            Coding Languages: <br />
+            <input
+              type="text"
+              name="codingLanguages"
+              onChange={catchCodingLanguages}
+            ></input>
+          </label>
+          <label>
+            Speciality Language:
+            <br />
+            <input
+              type="text"
+              name="specialityLanguage"
+              onChange={catchSpecialityLanguage}
+            ></input>
+          </label>
+          <label>
+            Interests: <br />
+            <input
+              type="text"
+              name="interests"
+              onChange={catchInterests}
+            ></input>
+          </label>
+          <label>
+            Bio: <br />
+            <textarea
+              name="bio"
+              cols="30"
+              rows="10"
+              onChange={catchBio}
+            ></textarea>
+          </label>
+          <label>
+            Are You A Previous Bootcamper? (true/false) <br />
+            <input
+              type="text"
+              name="previousBootcamper"
+              onChange={catchPreviousBootcamper}
+            ></input>
+          </label>
+          <label></label>
+          <Link to="/MyProfile">
+            <button onClick={handleSubmit} type="submit">
+              Submit Form
+            </button>
+          </Link>
+        </form>
       )}
     </>
   );
