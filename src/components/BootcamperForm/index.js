@@ -73,17 +73,17 @@ function BootcamperForm({ state }) {
   //console.log(displayName, email, interestedIndustry, interests, bio);}
 
   return (
-    <>
+    <div className={styles.overall}>
       {!dbBootcamperInfo && (
         <div class={formClass ? styles.show : styles.hide}>
-          <p>
+          <p className={styles.ptag}>
             Please complete the form below and make sure you submit your
             information! This will take you to the mentor matching page once
             completed.
           </p>
           <form>
             <label>
-              Name:
+              Name: <br />
               <input
                 type="text"
                 name="displayName"
@@ -92,7 +92,7 @@ function BootcamperForm({ state }) {
               ></input>
             </label>
             <label>
-              Email:
+              Email: <br />
               <input
                 type="email"
                 name="email"
@@ -101,7 +101,7 @@ function BootcamperForm({ state }) {
               ></input>
             </label>
             <label>
-              Interested Industry:
+              Interested Industry: <br />
               <input
                 type="text"
                 name="interestedIndustry"
@@ -109,7 +109,7 @@ function BootcamperForm({ state }) {
               ></input>
             </label>
             <label>
-              Interests:
+              Interests: <br />
               <input
                 type="text"
                 name="interests"
@@ -117,7 +117,7 @@ function BootcamperForm({ state }) {
               ></input>
             </label>
             <label>
-              Bio:
+              Bio: <br />
               <textarea
                 name="bio"
                 cols="30"
@@ -133,7 +133,7 @@ function BootcamperForm({ state }) {
           </form>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
