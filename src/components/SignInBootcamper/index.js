@@ -61,7 +61,7 @@ function BootcamperSignIn({ setUserGoogle }) {
         {user && <BootcampersForm state={user} />}
         {user && (
           <Link to="/BootcampersHome">
-            <Button text={"Submit"} />
+            <Button text={"Next"} />
           </Link>
         )}
 
