@@ -53,18 +53,11 @@ function BootcamperSignIn({ setUserGoogle }) {
           </Link>
         )}
         {user && <p>Welcome, {user.displayName}</p>}
-        {user && (
-          <p>
-            Please complete the form below and make sure you submit your
-            information! This will take you to the mentor matching page once
-            completed.
-          </p>
-        )}
 
         {user && <BootcampersForm state={user} />}
         {user && (
           <Link to="/BootcampersHome">
-            <Button text={"Home"} />
+            <Button text={"Next"} />
           </Link>
         )}
         {user && (

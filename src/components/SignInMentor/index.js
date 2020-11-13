@@ -61,13 +61,7 @@ function MentorSignIn({ setMentorGoogle }) {
         </Link>
       )}
       {user && <p>Welcome, {user.displayName}</p>}
-      {user && (
-        <p>
-          Please complete the form below and make sure you submit your
-          information! This will put you in the pool of mentors for the current
-          cohort. Thank you for your submission!
-        </p>
-      )}
+
       {user && <MentorsForm state={user} />}
       {loading && (
         <img

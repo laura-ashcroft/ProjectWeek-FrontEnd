@@ -73,56 +73,63 @@ function BootcamperForm({ state }) {
   return (
     <>
       {!dbBootcamperInfo && (
-        <form>
-          <label>
-            Name:
-            <input
-              type="text"
-              name="displayName"
-              onChange={catchName}
-              value={state.displayName}
-            ></input>
-          </label>
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              onChange={catchEmail}
-              value={state.email}
-            ></input>
-          </label>
-          <label>
-            Interested Industry:
-            <input
-              type="text"
-              name="interestedIndustry"
-              onChange={catchIndustry}
-            ></input>
-          </label>
-          <label>
-            Interests:
-            <input
-              type="text"
-              name="interests"
-              onChange={catchInterests}
-            ></input>
-          </label>
-          <label>
-            Bio:
-            <textarea
-              name="bio"
-              cols="30"
-              rows="10"
-              onChange={catchBio}
-            ></textarea>
-          </label>
-          <Link to="/BootcampersHome">
-            <button onClick={handleSubmit} type="submit">
-              Submit Form
-            </button>
-          </Link>
-        </form>
+        <div>
+          <p>
+            Please complete the form below and make sure you submit your
+            information! This will take you to the mentor matching page once
+            completed.
+          </p>
+          <form>
+            <label>
+              Name:
+              <input
+                type="text"
+                name="displayName"
+                onChange={catchName}
+                value={state.displayName}
+              ></input>
+            </label>
+            <label>
+              Email:
+              <input
+                type="email"
+                name="email"
+                onChange={catchEmail}
+                value={state.email}
+              ></input>
+            </label>
+            <label>
+              Interested Industry:
+              <input
+                type="text"
+                name="interestedIndustry"
+                onChange={catchIndustry}
+              ></input>
+            </label>
+            <label>
+              Interests:
+              <input
+                type="text"
+                name="interests"
+                onChange={catchInterests}
+              ></input>
+            </label>
+            <label>
+              Bio:
+              <textarea
+                name="bio"
+                cols="30"
+                rows="10"
+                onChange={catchBio}
+              ></textarea>
+            </label>
+            <Link to="/BootcampersHome">
+              <button onClick={handleSubmit} type="submit">
+                Submit Form
+              </button>
+            </Link>
+          </form>
+        </div>
       )}
     </>
   );
