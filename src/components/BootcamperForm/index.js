@@ -15,6 +15,7 @@ function BootcamperForm({ state }) {
   const [interests, setInterests] = useState("");
   const [bio, setBio] = useState("");
   const [dbBootcamperInfo, setDbBootcamperInfo] = useState(false);
+  const [formClass, setFormClass] = useState(true);
   function catchName(e) {
     setDisplayName(e.target.value);
   }
@@ -52,6 +53,7 @@ function BootcamperForm({ state }) {
     })
       .then((response) => response.json())
       .then((data) => console.log(data));
+    setFormClass(!formClass);
   }
 
   useEffect(() => {
@@ -73,7 +75,7 @@ function BootcamperForm({ state }) {
   return (
     <>
       {!dbBootcamperInfo && (
-        <div>
+        <div class={formClass ? styles.show : styles.hide}>
           <p>
             Please complete the form below and make sure you submit your
             information! This will take you to the mentor matching page once

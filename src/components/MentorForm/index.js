@@ -19,6 +19,7 @@ function MentorForm({ state }) {
   const [previousBootcamper, setPreviousBootcamper] = useState("");
   const [codingLanguages, setCodingLanguages] = useState("");
   const [dbMentorInfo, setDbMentorInfo] = useState(false);
+  const [formClass, setFormClass] = useState(true);
   console.log(state);
   console.log(bio);
   // event.preventDefault();
@@ -88,6 +89,7 @@ function MentorForm({ state }) {
       .then((response) => response.json())
       .then((data) => console.log(data));
     console.log("handlesubmit working");
+    setFormClass(!formClass);
   }
 
   useEffect(() => {
@@ -109,6 +111,15 @@ function MentorForm({ state }) {
   return (
     <>
       {!dbMentorInfo && (
+
+       
+       <div className={formClass ? styles.show : styles.hide}>
+          <p>
+            Please complete the form below and make sure you submit your
+            information! This will put you in the pool of mentors for the
+            current cohort. Thank you for your submission!
+          </p>
+
         <form>
           <label>
             Name: <br />
