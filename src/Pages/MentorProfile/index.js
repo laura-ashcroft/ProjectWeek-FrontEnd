@@ -25,7 +25,7 @@ function MentorProfile() {
         the School of Code on bootcamp@schoolofcode.co.uk
       </p>
       <Link to="/Mentor">
-        <Button text="back" />
+        <Button text="Back" />
       </Link>
     </div>
   );

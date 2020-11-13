@@ -1,6 +1,7 @@
 //functionality
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 //images
 import soc from "../../Images/soc.png";
 //components
@@ -21,7 +22,14 @@ function HomePage() {
   return (
     <div className={styles.homePage}>
       <nav className={styles.homePageButtons}>
-        <img className={styles.socLogo} src={soc} alt="school of code logo" />
+        <a href="https://www.schoolofcode.co.uk" target="blank">
+          <motion.img
+            whileHover={{ scale: 1.2, transition: { duration: 1 } }}
+            className={styles.socLogo}
+            src={soc}
+            alt="school of code logo"
+          />
+        </a>
         <h2>Welcome To School of Code Mentoring</h2>
         <p>Please select your role at School of Code</p>
 
@@ -36,10 +44,6 @@ function HomePage() {
         <Link to="/Coach">
           <Button text={"Coach"} />
         </Link>
-
-        <a href="https://www.schoolofcode.co.uk" target="blank">
-          Find out more about School of Code
-        </a>
       </nav>
     </div>
   );

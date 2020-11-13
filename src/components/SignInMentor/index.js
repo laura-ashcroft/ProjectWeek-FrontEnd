@@ -50,7 +50,7 @@ function MentorSignIn({ setMentorGoogle }) {
       )}
       {!user && (
         <Link to="/">
-          <Button text="back" />
+          <Button text="Back" />
         </Link>
       )}
       {user && <p>Welcome, {user.displayName}</p>}

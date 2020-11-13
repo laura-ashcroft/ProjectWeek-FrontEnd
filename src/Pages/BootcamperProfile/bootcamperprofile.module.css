@@ -1,14 +1,37 @@
 .socLogo {
   width: 100px;
-  margin-top: 20px;
+  margin-top: 40px;
   position: relative;
-  margin-right: 95%;
+  margin-right: 85%;
 }
 
 .bootcamperprofile {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
   text-align: center;
 }
 
 p {
   color: white;
+}
+
+.profileInfo {
+  max-width: 60%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5%;
+}
+
+a {
+  color: white;
+}
+
+.profileLink {
+  max-width: 60%;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 50px;
 }

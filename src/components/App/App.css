@@ -6,7 +6,8 @@
 
 body {
   background-image: url("../../Images/socBg.png");
-  height: 200vh;
+  height: 100vh;
+  width: 100vw;
 }
 
 h2,

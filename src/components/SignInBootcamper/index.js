@@ -24,50 +24,58 @@ function BootcamperSignIn({ setUserGoogle }) {
   setUserGoogle(user);
   return (
     <div className={styles.signInDiv}>
-      <img className={styles.socLogo} src={soc} alt="school of code logo" />
-      <h2>Welcome To School of Code Mentoring, Bootcamper</h2>
-      {!user && (
-        <img
-          className={styles.googleSignIn}
-          src={signInGoogle}
-          alt="google sign in"
-          onClick={signInWithRedirect}
-        />
-      )}
-      {user && (
-        <Button className={styles.signOut} onClick={logout} text={"Log Out"} />
-      )}
-      {!user && (
-        <Link to="/">
-          <Button text="back" />
-        </Link>
-      )}
-      {user && <p>Welcome, {user.displayName}</p>}
-      {user && (
-        <p>
-          Please complete the form below and make sure you submit your
-          information! This will take you to the mentor matching page once
-          completed.
-        </p>
-      )}
+      <nav className={styles.signInNav}>
+        <img className={styles.socLogo} src={soc} alt="school of code logo" />
+        <h2 className={styles.heading}>
+          Welcome To School of Code Mentoring, Bootcamper
+        </h2>
+        {!user && (
+          <img
+            className={styles.googleSignIn}
+            src={signInGoogle}
+            alt="google sign in"
+            onClick={signInWithRedirect}
+          />
+        )}
+        {user && (
+          <Button
+            className={styles.signOut}
+            onClick={logout}
+            text={"Log Out"}
+          />
+        )}
+        {!user && (
+          <Link to="/">
+            <Button text="Back" />
+          </Link>
+        )}
+        {user && <p>Welcome, {user.displayName}</p>}
+        {user && (
+          <p>
+            Please complete the form below and make sure you submit your
+            information! This will take you to the mentor matching page once
+            completed.
+          </p>
+        )}
 
-      {user && <BootcampersForm state={user} />}
-      {user && (
-        <Link to="/BootcampersHome">
-          <Button text={"Submit"} />
-        </Link>
-      )}
+        {user && <BootcampersForm state={user} />}
+        {user && (
+          <Link to="/BootcampersHome">
+            <Button text={"Submit"} />
+          </Link>
+        )}
 
-      {/*{user && <h2>Sign Out Of School of Code Mentoring</h2>}*/}
-      {loading && (
-        <img
-          className={styles.spinnerGif}
-          src={loadingSpinner}
-          alt="loading spinner"
-        />
-      )}
-      {error && <img src={errorImage} alt="error message" />}
-      {error && <p>Please try again.</p>}
+        {/*{user && <h2>Sign Out Of School of Code Mentoring</h2>}*/}
+        {loading && (
+          <img
+            className={styles.spinnerGif}
+            src={loadingSpinner}
+            alt="loading spinner"
+          />
+        )}
+        {error && <img src={errorImage} alt="error message" />}
+        {error && <p>Please try again.</p>}
+      </nav>
     </div>
   );
 }
