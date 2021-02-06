@@ -57,17 +57,10 @@ This application allows:
 
 <img src="./src/Images/bootcamper.png" alt="Bootcamper Page"/>
 
-### Bootcamper Sign Up
-
-<img src="./src/Images/bootcampersignup.png" alt="Bootcamper Profile Page"/>
 
 ### Bootcamper Select Mentors
 
 <img src="./src/Images/mentorcards.png" alt="Bootcamper Select Mentors"/>
-
-### Mentor Sign Up
-
-<img src="./src/Images/mentorsignup.png" alt="Mentor Sign Up"/>
 
 ### Coach Password Page
 
