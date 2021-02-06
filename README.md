@@ -1,70 +1,78 @@
-# Project Week Front-End
+# Mentor Matching Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## School of Code 1 Week Project
 
-## Available Scripts
+### Laura Ashcroft | The Internet Explorers
 
-In the project directory, you can run:
+During week 8 of School of Code, we were tasked with making a full stack application. With only 1 day to plan, 3 days to code and the final day to present, my team created a complete application for a better mentor matching system at SoC.
 
-### `npm start`
+This application allows:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Mentors to register and submit information about their professional interests, current job, experience, etc.
+- School of Code bootcampers to find a suitable mentor who work in tech to support them.
+- Bootcampers to view all the mentors and submit their preferences.
+- School of Code coaches to view all mentors and bootcampers, so they can easily pair them by preferences.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Tech Stack:
 
-### `npm test`
+- `Create React App`
+- `JSX`
+- `Firebase Authorisation`
+- `CSS Modules`
+- `HTML5`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### How To Use
 
-### `npm run build`
+1. Select from the following options to determine the path:
+   - Bootcamper
+   - Mentor
+   - Coach
+2. If you are a bootcamper:
+   - Log in with your Google account and create a profile with your information.
+   - Select which mentors you would prefer to be matched with during your time at School of Code.
+   - Submit your choices.
+   - Check your profile and which mentors you have selected.
+3. If you are a mentor:
+   - Log in with your Google account and create a profile with your information.
+   - Check your profile.
+4. If you are a coach:
+   - Enter the coach password to gain access to the tables.
+   - Check both the bootcamper information and mentor information to pair them together.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone or download this repository.
+2. Download the required npm modules by entering `npm i` into the terminal.
+3. Run the application by entering `npm start` into the terminal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Mentor Matching Homepage
 
-### `npm run eject`
+<img src="./src/Images/homepage.png" alt="Homepage" />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Sign In With Google
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="./src/Images/firebase.png" alt="Sign In With Firebase"/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Bootcamper Homepage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src="./src/Images/bootcamper.png" alt="Bootcamper Page"/>
 
-## Learn More
+### Bootcamper Sign Up
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="./src/Images/bootcampersignup.png" alt="Bootcamper Profile Page"/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Bootcamper Select Mentors
 
-### Code Splitting
+<img src="./src/Images/mentorcards.png" alt="Bootcamper Select Mentors"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Mentor Sign Up
 
-### Analyzing the Bundle Size
+<img src="./src/Images/mentorsignup.png" alt="Mentor Sign Up"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Coach Password Page
 
-### Making a Progressive Web App
+<img src="./src/Images/coachpassword.png" alt="Coach Password Page" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Coach Information Page
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./src/Images/coachinfo.png" alt="Coach Info Page"/>
